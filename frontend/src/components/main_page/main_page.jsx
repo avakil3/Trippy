@@ -35,6 +35,9 @@ class MainPage extends React.Component {
 
         <div className='pins-section'>
           <h2>Destinations and experiences trending in [ ]</h2>
+          <hr />
+
+          
         </div>
       </div>
     );
