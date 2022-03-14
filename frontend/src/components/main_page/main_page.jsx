@@ -13,7 +13,7 @@ class MainPage extends React.Component {
             <div className='region'>
               <label>Where do you want to travel?</label>
             <select id="region">
-              <option selected value="anywhere">Anywhere</option>
+              <option value="anywhere">Anywhere</option>
               <option value="north-america">North America</option>
               <option value="asia">Asia</option>
               <option value="europe">Europe</option>
@@ -24,7 +24,7 @@ class MainPage extends React.Component {
             <div className="trip-type">
             <label>What type of trip?</label>
             <select id="trip-type">
-              <option selected value="any">Any</option>
+              <option value="any">Any</option>
               <option value="relaxation">Relaxation</option>
               <option value="adventure">Adventure</option>
               <option value="camping">Camping</option>

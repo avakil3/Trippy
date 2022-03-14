@@ -39,11 +39,17 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
     />
 );
 
+const Private = ({ loggedIn, children }) => {
+    return !loggedIn ? children : <Navigate to="/" />;
+  }
+  
+
 const mapStateToProps = state => (
     { loggedIn: state.session.isAuthenticated }
 );
 
-export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+export const AuthRoute = connect(mapStateToProps)(Auth);
+export const PrivateRoute = connect(mapStateToProps)(Private);
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 
