@@ -11,11 +11,16 @@ const validateLoginInput = require('../../validation/login');
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.json({ msg: 'Success' });
+    res.json({
+        id: req.user.id,
+        username: req.user.username,
+        email: req.user.email
+    });
 })
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
+    res.header("Access-Control-Allow-Origin", "*");
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -50,6 +55,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
+    res.header("Access-Control-Allow-Origin", "*");
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -62,23 +68,32 @@ router.post('/login', (req, res) => {
     User.findOne({ email })
         .then(user => {
             if (!user) {
-                // Use the validations to send the error
-                errors.email = 'User not found';
-                return res.status(404).json(errors);
+                return res.status(404).json({ email: 'This user does not exist' });
             }
 
             bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
-                        res.json({ msg: 'Success' });
+                        const payload = { id: user.id, username: user.username };
+
+                        jwt.sign(
+                            payload,
+                            keys.secretOrKey,
+                            // Tell the key to expire in one hour
+                            { expiresIn: 3600 },
+                            (err, token) => {
+                                res.json({
+                                    success: true,
+                                    token: 'Bearer ' + token
+                                });
+                            });
                     } else {
-                        // And here:
-                        errors.password = 'Incorrect password'
-                        return res.status(400).json(errors);
+                        return res.status(400).json({ password: 'Incorrect password' });
                     }
                 })
         })
 })
+
 
 
 module.exports = router;
