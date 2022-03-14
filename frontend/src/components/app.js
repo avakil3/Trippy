@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 import { Routes, Route } from 'react-router-dom';
 import MainPage from './main_page/main_page';
 // import LoginFormContainer from './session/login_form_container';
