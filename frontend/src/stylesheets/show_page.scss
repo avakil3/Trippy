@@ -1,0 +1,39 @@
+.whole-page {
+    height: calc(100vh - 80px);
+    width: 100vw;
+}
+
+.everything-but-the-header {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0.5%;
+    box-sizing: border-box;
+    border: 2px solid rgb(65, 53, 224);
+}
+
+.show-container-item {
+    height: 100%;
+    width: 80%;
+    border: 2px solid rgb(16, 219, 141);
+    box-sizing: border-box;
+    z-index: 1;
+    display: flex;
+}
+
+.left-side-of-show-container {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgb(192, 13, 13);
+    border-bottom-left-radius: 10%;
+    border-top-left-radius: 10%;
+    > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-bottom-left-radius: 10%;
+        border-top-left-radius: 10%;
+    }
+}

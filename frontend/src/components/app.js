@@ -6,6 +6,7 @@ import MainPage from './main_page/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import SplashPage from './splash_page/splash_page'
+import ShowPage from './show_page/show_page';
 import '../index.scss'
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
       {/* <PrivateRoute path="/signup" component={SignupFormContainer} /> */}
       <Route path="/signup" element={ <PrivateRoute> <SignupFormContainer /> </PrivateRoute> }
 />
+      <Route path='/show' element={<ShowPage/>} />
     </Routes>
   </div>
 );
