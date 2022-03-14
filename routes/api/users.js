@@ -20,7 +20,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
 
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
-    res.header("Access-Control-Allow-Origin", "*");
+    //res.header("Access-Control-Allow-Origin", "*");
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -41,6 +41,7 @@ router.post('/register', (req, res) => {
                 })
 
                 bcrypt.genSalt(10, (err, salt) => {
+                    debugger;
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         newUser.password = hash;
@@ -55,7 +56,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-    res.header("Access-Control-Allow-Origin", "*");
+    //res.header("Access-Control-Allow-Origin", "*");
 
     if (!isValid) {
         return res.status(400).json(errors);
