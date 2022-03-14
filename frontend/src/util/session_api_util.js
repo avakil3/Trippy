@@ -6,6 +6,7 @@ export const setAuthToken = token => {
   } else {
     delete axios.defaults.headers.common['Authorization'];
   }
+  axios.defaults.baseURL = 'http://localhost:5001';
 };
 
 export const signup = (userData) => {
