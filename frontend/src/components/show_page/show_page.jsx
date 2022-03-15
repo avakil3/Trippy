@@ -12,16 +12,28 @@ class ShowPage extends React.Component{
             <div className='whole-page'>
                 <HeaderContainer/>
                 <div className='everything-but-the-header'>
-                    <Link to={"/home"}><div id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></div></Link>
-                    <div className='show-container-item'>
-                        <div className='left-side-of-show-container'>
-                            <img src="images/showpage_placeholder.png" />
-                        </div>
-                        <div className='right-side-of-show-container'>
-                            <div className='header-of-right-side-of-show'></div>
-                            <div></div><h1>Title here</h1>
-                            <p>Region:</p>
-                            <p>Vacation type:</p>
+                    <Link to={"/home"} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></Link>
+                    <div>
+                        <div className='show-container-item'>
+                            <div className='left-side-of-show-container'>
+                                <img src="images/showpage_placeholder.png" />
+                            </div>
+                            <div className='right-side-of-show-container'>
+                                <div className='header-of-right-side-of-show'>
+                                    <button>Save</button>
+                                    <select id="board-selector">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div className='title-area-of-right-side-of-show'>
+                                    <p>this.props.pinId.title</p>
+                                </div>
+                                <div></div><h1>Title here</h1>
+                                <p>Region:</p>
+                                <p>Vacation type:</p>
+                                <p>description:</p>
+                                <a href="google.com"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
