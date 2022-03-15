@@ -10,10 +10,13 @@ export const setAuthToken = token => {
 };
 
 export const signup = (userData) => {
+  debugger;
+  axios.defaults.baseURL = 'http://localhost:5001';
   return axios.post('/api/users/register', userData);
 };
 
 export const login = (userData) => {
+  axios.defaults.baseURL = 'http://localhost:5001';
   return axios.post('/api/users/login', userData);
 };
 
