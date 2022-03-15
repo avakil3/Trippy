@@ -6,22 +6,24 @@ class MainPage extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {filteredPins: Object.values(this.props.pins)};
+    this.state = {filteredPins: []};
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchPins()
+      .then(()=> this.setState({filteredPins: Object.values(this.props.pins)}));
   }
 
-  componentDidUpdate(){
+
+  handleChange(){
     const regionSelector = document.getElementById("region");
-    const tripTypeSelector = document.getElementById("tripType");
-    if (Object.values(this.props.pins).length > 0){
-      // this.setState({filteredPins: PinsFilter(this.props.pins,regionSelector.value,tripTypeSelector.value)});
-    }
+    const tripTypeSelector = document.getElementById("trip-type");
+      this.setState({filteredPins: PinsFilter(this.props.pins,regionSelector.value,tripTypeSelector.value)});
   }
 
   render() {
+    // if (Object.values(this.props.pins) === 0) return null;
     return (
       <div className='body'>
         <HeaderContainer/>
@@ -30,7 +32,7 @@ class MainPage extends React.Component {
           <div className='filters'>
             <div className='region'>
               <label>Where do you want to travel?</label>
-            <select id="region" defaultValue='anywhere'>
+            <select id="region" defaultValue='anywhere' onChange={this.handleChange}>
               <option value="anywhere">Anywhere</option>
               <option value="north-america">North America</option>
               <option value="asia">Asia</option>
@@ -41,7 +43,7 @@ class MainPage extends React.Component {
             </div>
             <div className="trip-type">
             <label>What type of trip?</label>
-            <select id="trip-type" defaultValue='any'>
+            <select id="trip-type" defaultValue='any' onChange={this.handleChange}>
               <option value="any">Any</option>
               <option value="relaxation">Relaxation</option>
               <option value="adventure">Adventure</option>
@@ -54,10 +56,9 @@ class MainPage extends React.Component {
         <div className='pins-section'>
           <h2>Destinations and experiences trending in [ ]</h2>
           <hr />
-              {
-                  this.state.filteredPins.map((pin)=> <div key={pin.id} className='pin'>I'm a pin</div> )
-              }
-
+          <div className="image-grid">
+              {this.state.filteredPins.map((pin)=> <img key={pin._id} className='pin' src={pin.imageURL}/> )}
+          </div>
         </div>
       </div>
     );

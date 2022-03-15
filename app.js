@@ -7,6 +7,7 @@ const passport = require('passport');
 const cors = require('cors');
 
 const users = require("./routes/api/users");
+const pins = require("./routes/api/pins");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
+app.use("/api/pins", pins);
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
