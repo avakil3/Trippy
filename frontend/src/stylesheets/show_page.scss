@@ -29,7 +29,7 @@
 
 .show-container-item {
     height: 100%;
-    width: 80%;
+    width: 60%;
     // border: 2px solid rgb(16, 219, 141);
     box-sizing: border-box;
     z-index: 1;
@@ -71,21 +71,87 @@
     // border: 2px solid rgb(245, 229, 13);
     display: flex;
     > button {
-        background-color: red;
+        background-color: rgb(243,151,102);
         color: white;
         height: 40px;
         width: 60px;
         border-radius: 35%;
+        border: none;
         text-decoration: none;
         justify-content: flex-end;
         margin: 2%;
     }
-    > select {
-        margin-top: 15px;
-        height: 10%;
-        box-decoration-break: none;
+    > button:hover {
+        background-color: rgba(184, 64, 0, 0.972);
+        color: white;
+        height: 40px;
+        width: 60px;
+        border-radius: 35%;
+        border: none;
+        text-decoration: none;
+        justify-content: flex-end;
+    }
+
+    .arrow-container {
+        margin-top: 5%;
+        position: relative;
+        box-sizing: border-box;
+        // border: purple solid 2px;
+        width: 50%;
     }
 }
+
+.show-dropdown{
+    background-color: white;
+    border-radius: 10%;
+    border-color: grey 1px solid;
+    box-shadow: 0px 0px 15px 2px lightgrey;
+    position: absolute;
+    top: 30%;
+    padding: 10px;
+    width: 100%;
+    > ul {
+        // border: green 2px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        li {
+            margin-bottom: 10px;
+            // border: rgb(111, 131, 241) 2px solid;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+        }
+
+        li:hover{
+            background-color: lightgray;
+        }
+        #add-board{
+            display: flex;
+        }
+        #add-icon{
+            margin-right: 5%;
+        }
+    } 
+}
+
+.heart{
+    margin-top: 2%;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 10%;
+    margin-left: 2%;
+    // height: 50%;
+    // border: 2px solid black;
+    box-sizing: border-box;
+}
+
+#heart{
+    color: rgb(243,151,102);
+}
+
 
 .title-area-of-right-side-of-show{
     height: 10%;
@@ -93,16 +159,19 @@
     box-sizing: border-box;
     // border: 2px solid rgb(245, 229, 13);
     display: flex;
-    // justify-content: center;
     align-items: center;
-    > p {
+    p {
         font-weight: 600;
         font-size: 24px;
         margin: 2%;
     }
+    > a {
+        color: black;
+        
+    };
 }
 .region-area-of-right-side-of-show{
-    height: 10%;
+    height: 5%;
     width: 100%;
     box-sizing: border-box;
     // border: 2px solid rgb(245, 229, 13);
