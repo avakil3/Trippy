@@ -14,7 +14,7 @@ const App = () => (
   <div>
     <Routes>
       <Route path="/" element={<SplashPage/>} />
-      <Route path='/show' element={<ShowPage/>} />
+      <Route path='/show/:pinId' element={<ShowPage/>} />
       <Route path="/home" element={<MainPageContainer/>} />
       <Route path="/signup" element={ <PrivateRoute>
                                         <SignupFormContainer /> 
