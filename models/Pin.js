@@ -3,15 +3,19 @@ const Schema = mongoose.Schema;
 
 const PinSchema = new Schema({
     tripType: {
-        type: String,
+        type: Array,
         required: true
     },
     region: {
         type: String,
         required: true
     },
+    location: {
+        type: String,
+        required: true
+    },
     imageURL: {
-        type: String, //placeholder - this will eventually be an AWS link 
+        type: String, 
         required: true
     },
     title: {
