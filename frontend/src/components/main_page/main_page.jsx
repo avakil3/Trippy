@@ -32,9 +32,12 @@ class MainPage extends React.Component {
 
 
   handleChange(e){
-      this.setState({[e.target.value]: e.target.checked});
-      this.setState({filteredPins: PinsFilter(this.props.pins,this.state)});
-    // console.log(this.state)
+    // debugger
+      this.setState({[e.target.value]: e.target.checked},()=> {
+        this.setState({filteredPins: PinsFilter(this.props.pins,this.state)},()=> console.log(this.state));
+      })
+       
+      
     }
 
     deleteTest(){
@@ -52,7 +55,7 @@ class MainPage extends React.Component {
         <HeaderContainer/>
         <div className='filters-section'>
           <h1>Discover Unique Destinations and Experiences</h1>
-          {/* <button onClick={()=> this.deleteTest()}>Delete Like</button> */}
+          <button onClick={()=> this.deleteTest()}>Delete Like</button>
           <div className='filters'>
             <div className='region'>
               <label>Where do you want to travel?</label>
