@@ -66,10 +66,10 @@ class LoginForm extends React.Component {
         return (
             <div className="session-form-container">
                 <div className="logo-wrapper">
-                    <img src={window.blackLogoURL} alt="logo-black" id='logo-black' />
+                    <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
                 </div>
 
-                <h1>Sign up</h1>
+                <h1>Log In</h1>
 
                 <button className='demo-btn' onClick={() => this.demoLogin()}>Login as Demo User</button>
 

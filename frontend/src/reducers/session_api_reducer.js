@@ -6,6 +6,7 @@ import {
 
 const initialState = {
     isAuthenticated: false,
+    isSignedIn: false,
     user: {}
 };
 
@@ -20,12 +21,14 @@ export default function (state = initialState, action) {
         case RECEIVE_USER_LOGOUT:
             return {
                 isAuthenticated: false,
+                isSignedIn: false,
                 user: undefined
             };
         case RECEIVE_USER_SIGN_IN:
             return {
                 ...state,
-                isSignedIn: true
+                isSignedIn: true,
+                isAuthenticated: true
             }
         default:
             return state;
