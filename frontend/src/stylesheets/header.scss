@@ -17,6 +17,21 @@
     display: flex;
 }
 
+.header {
+    display: flex;
+    font-family: sans-serif;
+    justify-content: space-between;
+    // padding: 16px;
+    background-color:var(--trippyOrange);
+    height: 100px;
+}
+
+.header-logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
+
 .dropdown {
     width: auto;
     position: absolute;
@@ -49,4 +64,10 @@
     &:hover{
         background: rgba(255, 255, 255, 0.5);
     }
+}
+
+#header-logo {
+    width: 150px;
+    align-items: center;
+    margin-top: 4em;
 }

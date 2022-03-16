@@ -12,13 +12,14 @@ body {
     height: 100vh;
 }
 
+
 .splash-header {
     display: flex;
     font-family: sans-serif;
     justify-content: space-between;
     // padding: 16px;
     background-color:var(--trippyOrange);
-    // height: 200px;
+    height: 100px;
 }
 
 .splash-logo-container {
@@ -27,8 +28,9 @@ body {
     margin-left: 1em;
 }
 
-#logo{
-    width: 6em;
+
+#splash-page-logo{
+    width: 100px;
     margin-left: 8em;
     // border: 1px solid black;
 }

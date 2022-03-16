@@ -11,7 +11,7 @@ class Pin extends React.Component {
     render(){
         const {pin} = this.props;
         return (
-            <div className={this.props.imgDimensions}> 
+            <div className={this.props.imgDimensions ? this.props.imgDimensions : "gallery-container h-2"}> 
                 <div className='gallery-item'> 
                     <Link to={`/show/${pin._id}`}> 
                         <img key={pin._id} className='pin-img' src={pin.imageURL}/>
