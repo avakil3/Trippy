@@ -53,9 +53,30 @@ class LoginForm extends React.Component {
         );
     }
 
+    demoLogin() {
+        const demoUser = {
+            email: "demo@demo.com",
+            username: "Demo",
+            password: "password"
+        }
+        this.props.login(demoUser);
+    }
+
     render() {
         return (
             <div className="session-form-container">
+                <div className="logo-wrapper">
+                    <img src={window.blackLogoURL} alt="logo-black" id='logo-black' />
+                </div>
+
+                <h1>Sign up</h1>
+
+                <button className='demo-btn' onClick={() => this.demoLogin()}>Login as Demo User</button>
+
+                <div className='divider'>
+                    <strong className='divider-title'>OR</strong>
+                </div>
+
                 <form onSubmit={this.handleSubmit} className="form-box">
                     <div className="form-elements">
                         <label className='form-input-titles'>Email
