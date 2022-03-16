@@ -25,8 +25,10 @@ class MainPage extends React.Component {
 
   componentDidMount(){
     // debugger
-    this.props.fetchPins()
-      .then(()=> this.setState({filteredPins: Object.values(this.props.pins)}));
+    // this.props.fetchPins()
+    //   .then(()=> this.setState({filteredPins: Object.values(this.props.pins)}));
+
+    // this.props.fetchLikes(this.props.currentUser);
   }
 
 
