@@ -2,15 +2,24 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCircle, faAngleDown} from "@fortawesome/free-solid-svg-icons";
+import { withRouter } from '../../util/route_util';
 
 class Header extends React.Component {
     constructor(props){
         super(props)
         this.state = {click:true};
+        this.logout = this.logout.bind(this);
     }
-    setClick(){
-        this.setState({click: !this.state.click})
-    }
+
+  setClick() {
+      this.setState({click: !this.state.click})
+  }
+
+  logout(e) {
+    e.preventDefault();
+    this.props.logout();
+    this.props.router.navigate("/")
+  }
 
   render() {
     const handleClick = () => this.setClick();
@@ -28,12 +37,12 @@ class Header extends React.Component {
             <div className="header-dropdown" onClick={handleClick}>
             <div className='header-user-info'>
                 <FontAwesomeIcon icon={faUserCircle} id="avatar" />
-                <h4>{"[Insert currentUser here]"}</h4>
+                <h4>{this.props.currentUser.username}</h4>
                 <FontAwesomeIcon icon={faAngleDown} id="dropdown" />
             </div>
             <ul className={this.state.click ? "dropdown clicked" : "dropdown"}>
                 <li>
-                    <Link className="logout" to={'/'} onClick={()=> "logout()"}>Log out</Link>
+                    <Link className="logout" to={'/'} onClick={this.logout}>Log out</Link>
                 </li>
             </ul>
             </div>
@@ -45,4 +54,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

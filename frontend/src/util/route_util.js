@@ -15,32 +15,32 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-const Auth = ({ component: Component, path, loggedIn, exact }) => (
-    <Route path={path} exact={exact} render={(props) => (
-        !loggedIn ? (
-            <Component {...props} />
-        ) : (
-            <Navigate to="/home" />
-        )
-    )} />
-);
+// const Auth = ({ component: Component, path, loggedIn, exact }) => (
+//     <Route path={path} exact={exact} render={(props) => (
+//         !loggedIn ? (
+//             <Component {...props} />
+//         ) : (
+//             <Navigate to="/home" />
+//         )
+//     )} />
+// );
 
-const Protected = ({ component: Component, loggedIn, ...rest }) => (
-    <Route
-        {...rest}
-        render={props =>
-            loggedIn ? (
-                <Component {...props} />
-            ) : (
-                // Redirect to the login page if the user is already authenticated
-                <Navigate to="/login" />
-            )
-        }
-    />
-);
+// const Protected = ({ component: Component, loggedIn, ...rest }) => (
+//     <Route
+//         {...rest}
+//         render={props =>
+//             loggedIn ? (
+//                 <Component {...props} />
+//             ) : (
+//                 // Redirect to the login page if the user is already authenticated
+//                 <Navigate to="/login" />
+//             )
+//         }
+//     />
+// );
 
 const Private = ({ loggedIn, children }) => {
-    return !loggedIn ? children : <Navigate to="/" />;
+    return !loggedIn ? children : <Navigate to="/home" />;
   }
   
 
@@ -48,9 +48,9 @@ const mapStateToProps = state => (
     { loggedIn: state.session.isAuthenticated }
 );
 
-export const AuthRoute = connect(mapStateToProps)(Auth);
-export const PrivateRoute = connect(mapStateToProps)(Private);
+// export const AuthRoute = connect(mapStateToProps)(Auth);
+export const PrivateRoute = withRouter(connect(mapStateToProps)(Private));
 
-export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+// export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 
 export { withRouter };
