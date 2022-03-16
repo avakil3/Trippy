@@ -30,16 +30,36 @@ class ShowPage extends React.Component{
         this.setState({liked: false})
     }
 
+    findPin(pins, pinId){
+        for (let i = 0; i < pins.length; i++) {
+            const pin = pins[i];
+            if (pin._id === pinId) return pin
+        }
+    }
+
+    componentDidMount(){
+        this.props.fetchPins(); 
+    }
+
+    capitalize(str){
+        const letters = str.split("")
+        letters[0] = letters[0].toUpperCase();
+        return letters.join("")
+    }
+
     render(){
+        if (!this.props.pins.length) return null; 
+        const pin = this.findPin(this.props.pins, this.props.router.params.pinId)
+        // debugger
         return(
             <div className='whole-page'>
                 <HeaderContainer/>
                 <div className='everything-but-the-header'>
                     <Link to={"/home"} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></Link>
-                    <div>
+                    {/* <div> */}
                         <div className='show-container-item'>
                             <div className='left-side-of-show-container'>
-                                <img src="images/showpage_placeholder.png" />
+                                <img src={pin.imageURL} />
                             </div>
                             <div className='right-side-of-show-container'>
                                 <div className='header-of-right-side-of-show'>
@@ -50,25 +70,34 @@ class ShowPage extends React.Component{
                                     </div>
                                 </div>
                                 <div className='title-area-of-right-side-of-show'>
-                                    <a href="https://www.toureiffel.paris/en"><p>this.props.pinId.title</p></a>
+                                    <a href={pin.extLink} target="_blank">{pin.title}</a>
                                 </div>
                                 <div className='region-area-of-right-side-of-show'>
-                                    <p>this.props.pinId.Region</p>
+                                    <p className="p-title">Region:</p>
+                                    <p className="p-body">{this.capitalize(pin.region)}</p>
                                 </div>
                                 <div className='region-area-of-right-side-of-show'>
-                                    <p>this.props.pinId.location</p>
+                                    <p className="p-title">Location:</p>
+                                    <p className="p-body">{pin.location}</p>
                                 </div>
-                                <div className='region-area-of-right-side-of-show'>
-                                    <p>this.props.pinId.Vacation type</p>
-                                </div>
-                                <div className='region-area-of-right-side-of-show'>
-                                    <p>this.props.pinId.description</p>
+                                <div className='description-area-of-right-side-of-show'>
+                                    <div className="description-container">
+                                        <div id='description-title'>
+                                            <p className="p-title">Description:</p>
+                                        </div>
+                                        <div id='description-body'>
+                                            <p className="p-body">{pin.description}</p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
                                     <div className='heart'>{this.state.liked ? <p id='heart' onClick={this.unlike}>{'\u2665'}</p> : <p id='heart' onClick={this.like}>{'\u2661'}</p> }</div>
                                 </div>
                             </div>
                         </div>
+                    {/* </div> */}
+                    <div className='spacer'>
+                        <FontAwesomeIcon icon={faArrowLeft} />
                     </div>
                 </div>
             </div>
