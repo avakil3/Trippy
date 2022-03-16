@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.router.navigate("/pins")
+            this.props.router.navigate("/home")
         }
 
         this.setState({ errors: nextProps.errors })
