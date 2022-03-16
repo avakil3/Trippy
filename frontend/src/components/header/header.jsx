@@ -24,10 +24,10 @@ class Header extends React.Component {
   render() {
     const handleClick = () => this.setClick();
     return (
-        <div className="splash-header">
-        <div className="splash-logo-container">
+        <div className="header">
+        <div className="header-logo-container">
           <Link to="/home" className="header-link">
-            <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+            <img id="header-logo" src='images/trippy-logo-white.png' alt="logo" />
           </Link>
         </div>
         <ul className="splash-nav-bar">
