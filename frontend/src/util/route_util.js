@@ -40,7 +40,7 @@ function withRouter(Component) {
 // );
 
 const Private = ({ loggedIn, children }) => {
-    return !loggedIn ? children : <Navigate to="/" />;
+    return !loggedIn ? children : <Navigate to="/home" />;
   }
   
 
