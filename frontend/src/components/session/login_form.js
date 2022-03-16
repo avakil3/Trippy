@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
-            this.props.history.push('/home');
+            this.props.router.navigate("/pins")
         }
 
         this.setState({ errors: nextProps.errors })
@@ -65,7 +65,7 @@ class LoginForm extends React.Component {
                         />
                         <br />
                         <input type="text"
-                            value={this.state.handle}
+                            value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
                         />

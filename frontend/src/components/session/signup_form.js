@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from '../../util/route_util';
+// import { Navigate } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -18,7 +19,8 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/home');
+            //console.log(this.props)
+            this.props.router.navigate("/login")
         }
 
         this.setState({ errors: nextProps.errors })
@@ -39,7 +41,7 @@ class SignupForm extends React.Component {
             password2: this.state.password2
         };
 
-        this.props.signup(user, this.props.history);
+        this.props.signup(user, this.props.navigate);
     }
 
     renderErrors() {
@@ -67,7 +69,7 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="text"
-                            value={this.state.handle}
+                            value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
                         />
