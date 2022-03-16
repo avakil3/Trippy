@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
         return (
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li className='sign-up-errors' key={`error-${i}`}>
                         {this.state.errors[error]}
                     </li>
                 ))}
@@ -62,33 +62,41 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="form-box">
                     <div className="form-elements">
                         <br />
+                        <label className='form-input-titles'>Email
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                             className="form-input"
                         />
+                        </label>
                         <br />
+                        <label className='form-input-titles'>Username
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
                             className="form-input"
                         />
+                        </label>
                         <br />
+                        <label className='form-input-titles'>Password
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                             className="form-input"
                         />
+                        </label>
                         <br />
+                        <label className='form-input-titles'>Confirm Password
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                             className="form-input"
                         />
+                        </label>
                         <br />
                         <input type="submit" value="Submit"
                         className="session-submit"/>
