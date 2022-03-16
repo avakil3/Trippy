@@ -4,6 +4,13 @@
     margin: 2em;
 }
 
+.logo-wrapper {
+    border-bottom: 1px solid #d9dadc;
+    width: 100%; 
+    text-align:center;
+    background-color:rgb(243,151,102);
+  }
+
 .session-form-container {
     display: flex;
     background-color: white;
@@ -17,7 +24,7 @@
 
   .demo-btn{
     background-color: rgb(243,151,102);
-    color:  black;
+    color: white;
     cursor: pointer;
     border-radius: 2em;
     padding: 1em;
@@ -89,7 +96,7 @@
 
   .session-submit{
     background-color: rgb(243,151,102);
-    color: black;
+    color: white;
     cursor: pointer;
     width: 10em;
     border-radius: 1.8em;
