@@ -37,7 +37,7 @@ class Header extends React.Component {
             <div className="header-dropdown" onClick={handleClick}>
             <div className='header-user-info'>
                 <FontAwesomeIcon icon={faUserCircle} id="avatar" />
-                <h4>{"[Insert currentUser here]"}</h4>
+                <h4>{this.props.currentUser.username}</h4>
                 <FontAwesomeIcon icon={faAngleDown} id="dropdown" />
             </div>
             <ul className={this.state.click ? "dropdown clicked" : "dropdown"}>
