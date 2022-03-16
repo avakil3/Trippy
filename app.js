@@ -8,6 +8,7 @@ const cors = require('cors');
 
 const users = require("./routes/api/users");
 const pins = require("./routes/api/pins");
+const likes = require("./routes/api/likes");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/pins", pins);
+app.use("/api/likes", likes);
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

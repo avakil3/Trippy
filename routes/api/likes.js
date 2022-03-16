@@ -15,8 +15,8 @@ router.post('/',
     (req, res) => {
   
       const newLike = new Like({
-        pinId: req.body.pinId,
-        userId: req.body.userId,
+        pin: req.body.pinId,
+        user: req.body.userId,
       });
   
       newLike.save().then(like => res.json(like));
