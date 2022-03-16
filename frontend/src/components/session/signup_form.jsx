@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
             //console.log(this.props)
-            this.props.router.navigate("/home")
+            this.props.router.navigate("/login")
         }
 
         this.setState({ errors: nextProps.errors })

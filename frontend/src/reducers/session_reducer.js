@@ -23,11 +23,12 @@ case RECEIVE_USER_LOGOUT:
    isSignedIn: false
  };
 case RECEIVE_USER_SIGN_IN:
+  //debugger
  return {
    ...state,
-   user: action.user,
-   isSignedIn: true,
-   isAuthenticated: true
+   //user: action.user,
+   isSignedIn: true
+   //isAuthenticated: true
  }
 default:
  return state;
