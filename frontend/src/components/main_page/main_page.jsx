@@ -34,10 +34,8 @@ class MainPage extends React.Component {
   handleChange(e){
     // debugger
       this.setState({[e.target.value]: e.target.checked},()=> {
-        this.setState({filteredPins: PinsFilter(this.props.pins,this.state)},()=> console.log(this.state));
+        this.setState({filteredPins: PinsFilter(this.props.pins,this.state)});
       })
-       
-      
     }
 
     deleteTest(){
