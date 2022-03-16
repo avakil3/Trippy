@@ -20,7 +20,7 @@ class SignupForm extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
             //console.log(this.props)
-            this.props.router.navigate("home")
+            this.props.router.navigate("/login")
         }
 
         this.setState({ errors: nextProps.errors })
@@ -42,6 +42,7 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user, this.props.navigate);
+        //this.props.login(user, this.props.navigate);
     }
 
     renderErrors() {
@@ -59,6 +60,16 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="session-form-container">
+                <div className="logo-wrapper">
+                    <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                </div>
+
+                <h1>Sign Up</h1>
+
+                <div className='divider'>
+                    <strong className='divider-title'>OR</strong>
+                </div>
+
                 <form onSubmit={this.handleSubmit} className="form-box">
                     <div className="form-elements">
                         <br />
