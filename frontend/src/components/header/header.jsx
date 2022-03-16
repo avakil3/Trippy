@@ -41,9 +41,8 @@ class Header extends React.Component {
                 <FontAwesomeIcon icon={faAngleDown} id="dropdown" />
             </div>
             <ul className={this.state.click ? "dropdown clicked" : "dropdown"}>
-                <li>
-                    <Link className="logout" to={'/'} onClick={this.logout}>Log out</Link>
-                </li>
+                    <Link to={'/likes'} className="dropdown-option">My Likes</Link>
+                    <Link to={'/'} className="dropdown-option" onClick={this.logout}>Log out</Link>
             </ul>
             </div>
         </li>

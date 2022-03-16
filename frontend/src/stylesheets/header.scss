@@ -18,14 +18,14 @@
 }
 
 .dropdown {
-    width: 150px;
+    width: auto;
     position: absolute;
     top: 70px;
     list-style: none;
     text-align: start;
 }
 
-.dropdown li {
+.dropdown a {
     background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
     border-radius: 5px;
@@ -35,13 +35,18 @@
     display: none;
 }
 
-.logout {
-    display: block;
+.dropdown-option {
+    width: 70px;
+    // border: 1px solid beige;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 5px;
     text-decoration: none;
     color: white;
+    font-weight: 500;
     padding: 8px;
     font-size: small;
     &:hover{
-        color: white;
+        background: rgba(255, 255, 255, 0.5);
     }
 }

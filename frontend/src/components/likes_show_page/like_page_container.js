@@ -1,22 +1,23 @@
 import { connect } from 'react-redux';
-import Like from './like';
-import { fetchLikes, createNewLike, deleteLike } from '../../actions/like_actions';
+import LikesShowPage from './like_show_page';
+// import { fetchPins } from '../../actions/pin_actions';
+// import { fetchLikes, createNewLike, deleteLike } from '../../actions/like_actions';
 
 const mapStateToProps = ({ session, entities: { users, pins , likes} }) => {
+  debugger
   return {
     currentUser: (session.user ? session.user : null),
+    pins,
     likes
   };
 };
 
 const mapDispatchToProps = dispatch => ({
     // fetchPins: ()=> dispatch(fetchPins()),
-    // fetchLikes: (user)=> dispatch(fetchLikes(user)),
-    createNewLike: (pin,user)=> dispatch(createNewLike(pin,user)),
-    deleteLike: (like) => dispatch(deleteLike(like))
+    // fetchLikes: (user)=> dispatch(fetchLikes(user))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Like);
+)(LikesShowPage);
