@@ -6,16 +6,13 @@ import { fetchLikes, createNewLike, deleteLike } from '../../actions/like_action
 const mapStateToProps = ({ session, entities: { users, pins , likes} }) => {
   return {
     currentUser: (session.user ? session.user : null),
-    pins,
-    likes
+    pins
   };
 };
 
 const mapDispatchToProps = dispatch => ({
     fetchPins: ()=> dispatch(fetchPins()),
-    fetchLikes: (user)=> dispatch(fetchLikes(user)),
-    createNewLike: (pin,user)=> dispatch(createNewLike(pin,user)),
-    deleteLike: (like) => dispatch(deleteLike(like))
+    fetchLikes: (user)=> dispatch(fetchLikes(user))
 });
 
 export default connect(

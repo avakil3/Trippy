@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import Pin from './pin';
-// import { fetchPins } from '../../actions/pin_actions';
+import Like from './like';
 import { fetchLikes, createNewLike, deleteLike } from '../../actions/like_actions';
 
 const mapStateToProps = ({ session, entities: { users, pins , likes} }) => {
@@ -20,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Pin);
+)(Like);

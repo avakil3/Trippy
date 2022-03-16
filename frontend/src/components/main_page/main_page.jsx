@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import {PinsFilter} from '../../util/selectors';
-import PinContainer from '../pin_item/pin_container';
+import Pin from '../pin_item/pin';
 
 class MainPage extends React.Component {
 
@@ -43,16 +43,11 @@ class MainPage extends React.Component {
     }
 
   render() {
-    // if (Object.values(this.props.likes) === 0) return null;
-    const {likes} = this.props;
-    const likedPinIds = Object.values(likes).map(pin => pin.pin);
-
     return (
       <div className='body'>
         <HeaderContainer/>
         <div className='filters-section'>
           <h1>Discover Unique Destinations and Experiences</h1>
-          {/* <button onClick={()=> this.deleteTest()}>Delete Like</button> */}
           <div className='filters'>
             <div className='region'>
               <label>Where do you want to travel?</label>
@@ -122,7 +117,7 @@ class MainPage extends React.Component {
           <h2>Destinations and experiences trending across your selections</h2>
           <hr />
           <div className="image-grid">
-              {this.state.filteredPins.map((pin)=> <PinContainer pin={pin} liked={likedPinIds.includes(pin._id) ? true : false} imgDimensions={imgDimensions()} key={pin._id} /> )}
+              {this.state.filteredPins.map((pin)=> <Pin pin={pin} imgDimensions={imgDimensions()} key={pin._id} /> )}
           </div>
         </div>
       </div>
