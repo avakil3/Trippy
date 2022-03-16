@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
 import Header from './header';
-// import { logout } from '../../actions/session_actions';
+ import { logout } from '../../actions/session_actions';
 
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: "" //(session.currentUser ? users[session.currentUser.id]: null)
+    currentUser: state.session.user
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  logout: "" //() => dispatch(logout()),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(
