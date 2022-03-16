@@ -6,25 +6,29 @@ import {Link } from 'react-router-dom'
 class Pin extends React.Component {
     constructor(props){
         super(props)
-        this.state = {clicked:false}
         this.handleLikeClick = this.handleLikeClick.bind(this);
     }
 
-    handleLikeClick(){
-        this.setState({clicked: !this.state.clicked});
+    handleLikeClick(liked,pin){
+        if(liked){
+            this.props.deleteLike(this.props.likes.find(like => like.pin === pin._id))
+        }else{
+            this.props.createNewLike(pin,this.props.currentUser);
+        }
     }
 
     render(){
         const {pin,liked} = this.props;
+
         return (
             <div className={this.props.imgDimensions}> 
-                <Link to={`/show/${pin._id}`}> 
                 <div className='gallery-item'> 
-                    <img key={pin._id} className='pin-img' src={pin.imageURL}/>
-                    <FontAwesomeIcon icon={faHeart} onClick={()=> this.handleLikeClick()}
-                    className={this.state.clicked || liked ? 'like clicked' : 'like'} />
+                    <Link to={`/show/${pin._id}`}> 
+                        <img key={pin._id} className='pin-img' src={pin.imageURL}/>
+                    </Link>
+                    <FontAwesomeIcon icon={faHeart} onClick={()=> this.handleLikeClick(liked,pin)}
+                    className={liked ? 'like clicked' : 'like'} />
                 </div>
-                </Link>
             </div>
         )
     }

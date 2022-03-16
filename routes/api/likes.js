@@ -27,11 +27,9 @@ router.post('/:user_id',
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
       console.log(req);
-    Like.findByIdAndDelete(req.body._id, function (err) {
-      err ? console.log(err) : console.log("Successful deletion");
-      }); 
-  
-      
+    Like.findByIdAndDelete(req.body)
+    .then(() => res.json("Like deleted."))
+    .catch(err => res.status(400).json("Error: " + err));
     }
   );
 

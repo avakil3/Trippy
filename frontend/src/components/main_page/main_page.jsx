@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import {PinsFilter} from '../../util/selectors';
-import Pin from '../pin_item/pin'
+import PinContainer from '../pin_item/pin_container';
 
 class MainPage extends React.Component {
 
@@ -39,8 +39,7 @@ class MainPage extends React.Component {
     }
 
     deleteTest(){
-      console.log(Object.values(this.props.likes)[0]);
-      this.props.deleteLike(Object.values(this.props.likes)[0]);
+      this.props.deleteLike(Object.values(this.props.likes)[0])
     }
 
   render() {
@@ -53,7 +52,7 @@ class MainPage extends React.Component {
         <HeaderContainer/>
         <div className='filters-section'>
           <h1>Discover Unique Destinations and Experiences</h1>
-          <button onClick={()=> this.deleteTest()}>Delete Like</button>
+          {/* <button onClick={()=> this.deleteTest()}>Delete Like</button> */}
           <div className='filters'>
             <div className='region'>
               <label>Where do you want to travel?</label>
@@ -120,10 +119,10 @@ class MainPage extends React.Component {
         </div>
 
         <div className='pins-section'>
-          <h2>Destinations and experiences trending in [ ]</h2>
+          <h2>Destinations and experiences trending across your selections</h2>
           <hr />
           <div className="image-grid">
-              {this.state.filteredPins.map((pin)=> <Pin pin={pin} liked={likedPinIds.includes(pin._id) ? true : false} imgDimensions={imgDimensions()} key={pin._id} /> )}
+              {this.state.filteredPins.map((pin)=> <PinContainer pin={pin} liked={likedPinIds.includes(pin._id) ? true : false} imgDimensions={imgDimensions()} key={pin._id} /> )}
           </div>
         </div>
       </div>

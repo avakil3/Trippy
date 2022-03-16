@@ -26,7 +26,7 @@ class Header extends React.Component {
     return (
         <div className="splash-header">
         <div className="splash-logo-container">
-          <Link to="/" className="header-link">
+          <Link to="/home" className="header-link">
             <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
           </Link>
         </div>
