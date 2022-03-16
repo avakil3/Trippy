@@ -24,33 +24,35 @@ class MainPage extends React.Component {
   }
 
   componentDidMount(){
-    // debugger
-    // this.props.fetchPins()
-    //   .then(()=> this.setState({filteredPins: Object.values(this.props.pins)}));
+    this.props.fetchPins()
+      .then(()=> this.setState({filteredPins: Object.values(this.props.pins)}));
 
-    // this.props.fetchLikes(this.props.currentUser);
+    this.props.fetchLikes(this.props.currentUser);
   }
 
 
   handleChange(e){
-    // const regionSelector = document.getElementById("region");
-    // const tripTypeSelector = document.getElementById("trip-type");
-    // this.setState({filteredPins: PinsFilter(this.props.pins,regionSelector.value,tripTypeSelector.value)});
-      // const checkbox = document.getElementById(e.target.value);
-      // debugger
       this.setState({[e.target.value]: e.target.checked});
       this.setState({filteredPins: PinsFilter(this.props.pins,this.state)});
     // console.log(this.state)
     }
 
+    deleteTest(){
+      console.log(Object.values(this.props.likes)[0]);
+      this.props.deleteLike(Object.values(this.props.likes)[0]);
+    }
+
   render() {
-    // if (Object.values(this.props.pins) === 0) return null;
+    // if (Object.values(this.props.likes) === 0) return null;
+    const {likes} = this.props;
+    const likedPinIds = Object.values(likes).map(pin => pin.pin);
 
     return (
       <div className='body'>
         <HeaderContainer/>
         <div className='filters-section'>
           <h1>Discover Unique Destinations and Experiences</h1>
+          {/* <button onClick={()=> this.deleteTest()}>Delete Like</button> */}
           <div className='filters'>
             <div className='region'>
               <label>Where do you want to travel?</label>
@@ -120,7 +122,7 @@ class MainPage extends React.Component {
           <h2>Destinations and experiences trending in [ ]</h2>
           <hr />
           <div className="image-grid">
-              {this.state.filteredPins.map((pin)=> <Pin pin={pin} imgDimensions={imgDimensions()} key={pin._id} /> )}
+              {this.state.filteredPins.map((pin)=> <Pin pin={pin} liked={likedPinIds.includes(pin._id) ? true : false} imgDimensions={imgDimensions()} key={pin._id} /> )}
           </div>
         </div>
       </div>
