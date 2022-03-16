@@ -3,7 +3,6 @@ import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import { connect } from 'react-redux';
 import Dropdown from './dropdown';
 
 class ShowPage extends React.Component{
@@ -76,14 +75,5 @@ class ShowPage extends React.Component{
         )
     }
 }
-
-// const mSTP = (state, ownProps) => ({
-//     pin: state.entities.activities[ownProps.match.params.activityId],
-//     users: state.entities.users
-// })
-
-// const mDTP = dispatch => ({
-//     fetchPin: id => dispatch(fetchPin(id))
-// })
 
 export default ShowPage;
