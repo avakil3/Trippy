@@ -29,25 +29,25 @@ const pins = [
         extLink: "https://www.airbnb.com/experiences/2728896?currentTab=experience_tab&federatedSearchId=863a62fa-c3e7-4a7f-831b-48248885fa99&searchId=&sectionId=787e4044-f310-4db6-9b55-de08a7c823a0&source=p2"
          }),
 
-    // new Pin({
-    //     title: "",
-    //     tripType: [],
-    //     region: "",
-    //     location: "",
-    //     imageURL: "",
-    //     description: "",
-    //     extLink: ""
-    // }),
+    new Pin({
+        title: "Adventure Utah",
+        tripType: ['camping', 'adventure', ],
+        region: "northAmerica",
+        location: "Las Vegas, Nevada",
+        imageURL: "https://trippy-seeds.s3.us-east-2.amazonaws.com/utah_hikes.webp",
+        description: "Explore waterfalls and canyons with medium grade hikes",
+        extLink: "https://www.airbnb.com/experiences/1972571?location=North%20America&currentTab=adventure_tab&federatedSearchId=5577d6e6-a50a-4c37-ba24-ae9ee31c4847&searchId=&sectionId=b2ce810f-1c0d-409f-8b09-ffb65ea2ac1a&source=p2"
+    }),
 
-    // new Pin({
-    //     title: "",
-    //     tripType: [],
-    //     region: "",
-    //     location: "",
-    //     imageURL: "",
-    //     description: "",
-    //     extLink: ""
-    // }),
+    new Pin({
+        title: "Route 66",
+        tripType: ['roadTrip', 'relaxing', 'adventure'],
+        region: "northAmerica",
+        location: "United States of America",
+        imageURL: "https://trippy-seeds.s3.us-east-2.amazonaws.com/route_66.jpeg",
+        description: "The most iconic road trip in the United States. Drive near historic sites, famous tourist attractions and so much more along the way.",
+        extLink: "https://fouraroundtheworld.com/road-trips-in-north-america/"
+    }),
 
 ];
 
