@@ -1,5 +1,5 @@
 # Background and Overview
-[Trippy](https://trippy-100.herokuapp.com/#/) is "Pinterest for Travel", where users can view, like and save various pictures that relate to different travel experiences, destinations, and lodging locations. Users are able to filter by trip type (relaxation, adventure, camping, etc) and location. For example, if the user filters for a "relaxing vacation" in the "North America" region, the app will show images of resorts in the desired location as well as experiences like "spa day" or "mimosas on South Beach". 
+[Trippy](https://trippy-100.herokuapp.com/#/) is "Pinterest for Travel", where users can view, like and save various pictures that relate to different travel experiences, destinations, and lodging locations. Users are able to filter by trip type (relaxation, adventure, camping, etc) and location. For example, if the user filters for a "relaxing vacation" in the "North America" region, the app will show images of experiences and resorts like "spa day at Bora Bora St. Regis" or "mimosas on South Beach". 
 
 Users can also create custom lists. They can add images to their custom list by liking an image on the homepage. This allows users to 1) either plan a future trip or 2) create a "bucket list" of things to do / places to visit for future reference. 
 
