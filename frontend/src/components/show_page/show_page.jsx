@@ -58,6 +58,7 @@ class ShowPage extends React.Component{
         // debugger
         return(
             <div className='whole-page'>
+                <div className='gradient show'></div>
                 <HeaderContainer/>
                 <div className='everything-but-the-header'>
                     <Link to={"/home"} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></Link>

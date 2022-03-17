@@ -18,8 +18,8 @@ export class LikesShowPage extends Component {
     // debugger
     return (
       <div className='body'>
+            <div className='gradient likes-page'></div>
             <HeaderContainer/>
-
         <div className='pins-section likes'>
              <h2>My Likes</h2>
              <hr />

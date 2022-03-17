@@ -46,6 +46,7 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className='body'>
+        <div className='gradient'></div>
         <HeaderContainer />
         <div className='filters-section'>
           <h1>Discover Unique Destinations and Experiences</h1>
