@@ -20,15 +20,25 @@ const pins = [
     // }),
 
     new Pin({
-        title: "",
-        tripType:[],
+        title: "Big Ben",
+        tripType:[""],
         region: "",
         location: "",
         imageURL: "",
         description: "",
         extLink: ""
-         }),
+    }),
+    // new Pin({
+    //     title: "",
+    //     tripType:[],
+    //     region: "",
+    //     location: "",
+    //     imageURL: "",
+    //     description: "",
+    //     extLink: ""
+    // }),
 
+    
 
 ];
 
