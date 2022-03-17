@@ -24,8 +24,4 @@ Technical challenges:
 
 # Group Members and Work Breakdown
 * Aagam Vakil, Shawn Fries, Yaakov Z
-* Monday 3/14 - Shawn to work on User Auth, Yaakov to work on Splash page, Aagam to help on both
-* Tuesday 3/15 - Shawn to work on setting up backend database and seeding, Yaakov / Aagam to work on home page and image modals
-* Wednesday 3/16 - Shawn to work on seeding app with various destinations and activities, Yaakov / Aagam to work on custom liked lists.
-* Thursday 3/17 - Work on CSS and tackle any outstanding bugs
 
