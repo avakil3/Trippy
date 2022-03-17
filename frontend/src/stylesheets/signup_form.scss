@@ -1,3 +1,16 @@
+#logo {
+    width: 150px;
+    align-items: center;
+    margin: 2em;
+}
+
+.logo-wrapper {
+    border-bottom: 1px solid #d9dadc;
+    width: 100%; 
+    text-align:center;
+    background-color:rgb(243,151,102);
+  }
+
 .session-form-container {
     display: flex;
     background-color: white;
@@ -9,10 +22,43 @@
     font-family: sans-serif;
   }
 
+  .demo-btn{
+    background-color: rgb(243,151,102);
+    color: white;
+    cursor: pointer;
+    border-radius: 2em;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    border: none;
+    width: 500px;
+    height: 40px;
+  }
+
   .form-box {
     display: flex;
     flex-direction: column;
     width: 50%; 
+  }
+
+  .divider {
+    text-align: center;
+    position: relative;
+    border-top: 1px solid #d9dadc;
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    width: 500px;
+  }
+  
+  .divider > .divider-title {
+    background: #fff;
+    padding: 0 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bolder;
   }
 
   .session-form-container h1{
@@ -50,7 +96,7 @@
 
   .session-submit{
     background-color: rgb(243,151,102);
-    color: black;
+    color: white;
     cursor: pointer;
     width: 10em;
     border-radius: 1.8em;

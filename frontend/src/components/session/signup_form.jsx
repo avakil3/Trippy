@@ -1,24 +1,26 @@
 import React from 'react';
 import { withRouter } from '../../util/route_util';
+// import { Navigate } from 'react-router-dom';
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             email: '',
             username: '',
             password: '',
+            password2: '',
             errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        this.clearedErrors = false;
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.currentUser === true) {
-            this.props.router.navigate("home")
+        if (nextProps.signedIn === true) {
+            //console.log(this.props)
+            this.props.router.navigate("/login")
         }
 
         this.setState({ errors: nextProps.errors })
@@ -30,15 +32,25 @@ class LoginForm extends React.Component {
         });
     }
 
+    demoLogin() {
+        const demoUser = {
+            email: "demo@demo.com",
+            password: "password"
+        }
+        this.props.login(demoUser);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-
         let user = {
             email: this.state.email,
-            password: this.state.password
+            username: this.state.username,
+            password: this.state.password,
+            password2: this.state.password2
         };
 
-        this.props.login(user);
+        this.props.signup(user, this.props.navigate);
+        //this.props.login(user, this.props.navigate);
     }
 
     renderErrors() {
@@ -56,8 +68,21 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="session-form-container">
+                <div className="logo-wrapper">
+                    <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                </div>
+
+                <h1>Sign Up</h1>
+
+                <button className='demo-btn' onClick={() => this.demoLogin()}>Login as Demo User</button>
+
+                <div className='divider'>
+                    <strong className='divider-title'>OR</strong>
+                </div>
+
                 <form onSubmit={this.handleSubmit} className="form-box">
                     <div className="form-elements">
+                        <br />
                         <label className='form-input-titles'>Email
                         <input type="text"
                             value={this.state.email}
@@ -85,7 +110,17 @@ class LoginForm extends React.Component {
                         />
                         </label>
                         <br />
-                        <input type="submit" value="Submit" className="session-submit" />
+                        <label className='form-input-titles'>Confirm Password
+                        <input type="password"
+                            value={this.state.password2}
+                            onChange={this.update('password2')}
+                            placeholder="Confirm Password"
+                            className="form-input"
+                        />
+                        </label>
+                        <br />
+                        <input type="submit" value="Submit"
+                        className="session-submit"/>
                         {this.renderErrors()}
                     </div>
                 </form>
@@ -94,4 +129,4 @@ class LoginForm extends React.Component {
     }
 }
 
-export default withRouter(LoginForm);
+export default withRouter(SignupForm);

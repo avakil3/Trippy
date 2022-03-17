@@ -9,14 +9,14 @@ mongoose
 
 const likes = [
 
-    // new Like({
-    //    user:"62312ac9097293a1a69840d8",
-    //    pin:"622f9b0c3ac02de9dccdacb5",
-    //     }),
-    // new Like({
-    //     user:"62312ac9097293a1a69840d8",
-    //     pin:"622f9c733ac02de9dccdacb7",
-    //         }),    
+    new Like({
+       user:"62312ac9097293a1a69840d8",
+       pin:"622f9b0c3ac02de9dccdacb5",
+        }),
+    new Like({
+        user:"62312ac9097293a1a69840d8",
+        pin:"622f9c733ac02de9dccdacb7",
+            }),    
 
 ];
 

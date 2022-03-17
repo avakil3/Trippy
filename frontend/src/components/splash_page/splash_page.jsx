@@ -9,7 +9,7 @@ const SplashPage = () => {
             <div className="splash-header">
               <div className="splash-logo-container">
                 <Link to="/" className="header-link">
-                  <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                  <img id="splash-page-logo" src='images/trippy-logo.jpeg' alt="logo" />
                 </Link>
               </div>
               <ul className="splash-nav-bar">

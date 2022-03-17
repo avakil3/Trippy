@@ -1,30 +1,23 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import {Link } from 'react-router-dom'
+import LikeContainer from '../like_item/Like_container';
+
 
 class Pin extends React.Component {
     constructor(props){
         super(props)
-        this.state = {clicked:false}
-        this.handleLikeClick = this.handleLikeClick.bind(this);
-    }
-
-    handleLikeClick(){
-        this.setState({clicked: !this.state.clicked});
     }
 
     render(){
-        const {pin,liked} = this.props;
+        const {pin} = this.props;
         return (
-            <div className={this.props.imgDimensions}> 
-                <Link to={`/show/${pin._id}`}> 
+            <div className={this.props.imgDimensions ? this.props.imgDimensions : "gallery-container h-2"}> 
                 <div className='gallery-item'> 
-                    <img key={pin._id} className='pin-img' src={pin.imageURL}/>
-                    <FontAwesomeIcon icon={faHeart} onClick={()=> this.handleLikeClick()}
-                    className={this.state.clicked || liked ? 'like clicked' : 'like'} />
+                    <Link to={`/show/${pin._id}`}> 
+                        <img key={pin._id} className='pin-img' src={pin.imageURL}/>
+                    </Link>
+                    <LikeContainer pin={pin} />
                 </div>
-                </Link>
             </div>
         )
     }

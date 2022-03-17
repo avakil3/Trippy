@@ -9,6 +9,7 @@ const cors = require('cors');
 const users = require("./routes/api/users");
 const pins = require("./routes/api/pins");
 const likes = require("./routes/api/likes");
+const path = require('path');
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -30,3 +31,11 @@ app.use("/api/likes", likes);
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}

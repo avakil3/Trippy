@@ -11,6 +11,6 @@ export const createLike = (pin,user) => {
   }
 
   export const deleteLike = (like) => {
-    debugger
-    return axios.delete(`/api/likes/`, like)
+    // debugger
+    return axios.delete(`/api/likes/`, { data: like })
   }

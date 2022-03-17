@@ -7,11 +7,11 @@ import * as LikeActions from '../actions/like_actions';
       case LikeActions.RECEIVE_LIKES:
         return action.likes.data;
       case LikeActions.RECEIVE_LIKE:
-        return Object.assign({},action.tweet, state);
+        // debugger
+        newState = state.slice().concat(action.like.data);
+        return newState;
       case LikeActions.DELETE_LIKE:
-        debugger
-        delete newState[action.like._id];
-        return Object.assign({},action.tweet, state);;
+        return Object.values(state).filter((like)=> like._id !== action.like._id);
       default:
         return state;
     }
