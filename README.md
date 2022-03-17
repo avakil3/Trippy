@@ -14,7 +14,7 @@ Users can also create custom lists. They can add images to their custom list by 
 # Technologies and Technical Challenges
 MERN Stack
 * Frontend: React, Redux, and Node.js
-* Backend: MongoDB / Express 
+* Backend: MongoDB / Express, AWS S3 for media storage
 
 Technical challenges:
 * Reading data from MongoDB database and organizing for display
@@ -22,6 +22,6 @@ Technical challenges:
 * Implementing the custom liked images list for each user
 
 
-# Group Members and Work Breakdown
+# Group Members
 * Aagam Vakil, Shawn Fries, Yaakov Z
 
