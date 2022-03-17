@@ -20,7 +20,7 @@ const pins = [
     // }),
 
     new Pin({
-        title: "Big Ben",
+        title: "",
         tripType:[""],
         region: "",
         location: "",
