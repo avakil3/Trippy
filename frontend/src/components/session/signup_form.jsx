@@ -32,6 +32,14 @@ class SignupForm extends React.Component {
         });
     }
 
+    demoLogin() {
+        const demoUser = {
+            email: "demo@demo.com",
+            password: "password"
+        }
+        this.props.login(demoUser);
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         let user = {
@@ -65,6 +73,8 @@ class SignupForm extends React.Component {
                 </div>
 
                 <h1>Sign Up</h1>
+
+                <button className='demo-btn' onClick={() => this.demoLogin()}>Login as Demo User</button>
 
                 <div className='divider'>
                     <strong className='divider-title'>OR</strong>
