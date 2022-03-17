@@ -94,20 +94,18 @@ class ShowPage extends React.Component{
                                         <a href={pin.extLink} target="_blank">{pin.title}</a>
                                     </div>
                                     <div className='region-location'>
-                                        <div className='region-area-of-right-side-of-show'>
+                                        {/* <div className='region-area-of-right-side-of-show'>
                                             <p className="p-title">Region:</p>
                                             <p className="p-body">{this.capitalize(pin.region)}</p>
-                                        </div>
+                                        </div> */}
                                         <div className='region-area-of-right-side-of-show'>
                                             <p className="p-title">Location:</p>
                                             <p className="p-body">{pin.location}</p>
                                         </div>
                                     </div>
                                     <div className='description-area-of-right-side-of-show' onFocus={this.seeDescription} onBlur={this.hideDescription} tabIndex="1">  
-                                        <div>
                                             <p className="p-title" id='description-title'>Description</p>
-                                            <p>...</p>
-                                        </div>
+                                            <p id='description-angle'><FontAwesomeIcon icon={faAngleDown}/></p>
                                         {this.state.look ? < Description description={pin.description}/> : null}
                                     </div>
                                     <div>

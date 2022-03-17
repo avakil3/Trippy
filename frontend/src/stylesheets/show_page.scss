@@ -2,14 +2,15 @@
 
     height: calc(100vh - 80px);
     width: 100vw;
+    font-family: sans-serif;
 }
 
 .everything-but-the-header {
     display: flex;
     justify-content: space-between;
     height: 100%;
-    width: 100%;
-    margin: 0.5%;
+    width: 100vw;
+    padding: 15px;
     box-sizing: border-box;
     // border: 2px solid rgb(65, 53, 224);
 }
@@ -201,12 +202,12 @@
 }
 
 .p-title{
-    font-size: 16px;
+    font-size: 12px;
     font-family: sans-serif;
     font-weight: bold;
 }
 .p-body{
-    font-size: 16px;
+    font-size: 12px;
     font-family: sans-serif;
     margin-left: 3%;
 }
@@ -223,34 +224,45 @@
 .description-area-of-right-side-of-show{
     width: 100%;
     box-sizing: border-box;
-    position: relative;
+    display: flex;
+    // position: relative;
     // border: 2px solid rgb(95, 90, 15);
 
     #description-title{
-        font-size: 18px;
+        font-size: 12px;
+        font-weight: bold;
         margin-bottom: 2%;
         box-sizing: border-box;
         // text-decoration: underline;
         // border: 2px solid rgb(245, 229, 13);
-    }   
+    }  
+    #description-angle{
+        margin-left: 3%;
+    } 
 }
 
 .description-dropdown{
     background-color: white;
     // border: 2px solid rgb(19, 187, 117);
     box-sizing: border-box;
+    margin-top: 20px;
+    margin-right: 15px;
     border-radius: 30px;
     padding: 15px;
     border-color: grey 1px solid;
     box-shadow: 0px 0px 15px 2px lightgrey;
     z-index: 1;
     position: absolute;
+    > p {
+        font-size: 12px;
+        font-family: sans-serif;
+    }
 }
 
 .spacer{
     width: 1%;
     box-sizing: border-box;
-    border: 2px solid rgb(19, 187, 117);
+    // border: 2px solid rgb(19, 187, 117);
     svg{
         color: white;
     }
