@@ -6,8 +6,7 @@ export class LikesShowPage extends Component {
 
     componentDidMount(){
         this.props.fetchPins()
-        // .then(()=> this.setState({filteredPins: Object.values(this.props.pins)}));
-      this.props.fetchLikes(this.props.currentUser);
+        this.props.fetchLikes(this.props.currentUser);
     }
 
   render() {
@@ -18,13 +17,10 @@ export class LikesShowPage extends Component {
     const likedPins = pins.filter(pin => likedPinIds.includes(pin._id))
     // debugger
     return (
-      <div>
+      <div className='body'>
             <HeaderContainer/>
-            <div className='gradient'>
-                {/* <h1>My Likes</h1> */}
-            </div>
 
-        <div className='pins-section'>
+        <div className='pins-section likes'>
              <h2>My Likes</h2>
              <hr />
              <div className="image-grid">
