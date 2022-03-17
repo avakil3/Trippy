@@ -49,6 +49,7 @@ class MainPage extends React.Component {
         <HeaderContainer />
         <div className='filters-section'>
           <h1>Discover Unique Destinations and Experiences</h1>
+		  <div className='gradient1'></div>
           <div className='filters'>
             <div className='region'>
               <label>Where do you want to travel?</label>
