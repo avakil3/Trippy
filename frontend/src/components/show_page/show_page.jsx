@@ -1,49 +1,35 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faAngleDown,faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
 import Dropdown from './dropdown';
 import Description from './description';
+import LikeContainer from '../like_item/Like_container';
 
 class ShowPage extends React.Component{
     constructor(props){
         super(props)
         this.state = {clicked: false, liked: false, look: false}
-        this.addDropdown = this.addDropdown.bind(this);
-        this.hideDropdown = this.hideDropdown.bind(this);
-        this.like = this.like.bind(this)
-        this.unlike = this.unlike.bind(this)
-        this.seeDescription = this.seeDescription.bind(this)
-        this.hideDescription = this.hideDescription.bind(this); 
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+        // this.hideDropdown = this.hideDropdown.bind(this);
+        this.toggleLike = this.toggleLike.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this); 
     }
 
-    addDropdown(){
-        this.setState({clicked: true})
-    }
-    hideDropdown(){
-        this.setState({clicked: false})
+    toggleDropdown(){
+        this.setState({clicked: !this.state.clicked})
     }
 
-    like(){
-        this.setState({liked: true})
+
+    toggleLike(){
+        this.setState({liked: !this.state.liked})
     }
 
-    unlike(){
-        this.setState({liked: false})
-    }
 
-    seeDescription(){
-        this.setState({look: true})
-    }
 
-    hideDescription(){
-        this.setState({look: false})
-    }
 
-    toggleDescription(e) {
-        e.stopPropagation()
+    toggleDescription() {
         this.setState({ look: !this.state.look })
     }
 
@@ -57,6 +43,7 @@ class ShowPage extends React.Component{
 
     componentDidMount(){
         this.props.fetchPins(); 
+        this.props.fetchLikes(this.props.currentUser);
     }
 
     capitalize(str){
@@ -81,7 +68,7 @@ class ShowPage extends React.Component{
                             </div>
                             <div className='right-side-of-show-container'>
                                 <div className='header-of-right-side-of-show'>
-                                    <div className='arrow-container' onFocus={this.addDropdown} onBlur={this.hideDropdown } tabIndex="1">
+                                    <div className='arrow-container' onClick={this.toggleDropdown} tabIndex="1">
                                         <p><FontAwesomeIcon icon={faAngleDown}/></p>
                                         {this.state.clicked ? < Dropdown /> : null}
                                     </div>
@@ -103,20 +90,20 @@ class ShowPage extends React.Component{
                                             <p className="p-body">{pin.location}</p>
                                         </div>
                                     </div>
-                                    <div className='description-area-of-right-side-of-show' onFocus={this.seeDescription} onBlur={this.hideDescription} tabIndex="1">  
+                                    <div className='description-area-of-right-side-of-show' onClick={this.toggleDescription} tabIndex="1">  
                                             <p className="p-title" id='description-title'>Description</p>
                                             <p id='description-angle'><FontAwesomeIcon icon={faAngleDown}/></p>
                                         {this.state.look ? < Description description={pin.description}/> : null}
                                     </div>
-                                    <div>
-                                        <div className='heart'>{this.state.liked ? <p id='heart' onClick={this.unlike}>{'\u2665'}</p> : <p id='heart' onClick={this.like}>{'\u2661'}</p> }</div>
-                                    </div>
+                                    {/* <div> */}
+                                        <div className='heart'> <LikeContainer pin={pin} /> </div>
+                                    {/* </div> */}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='spacer'>
-                        <FontAwesomeIcon icon={faArrowLeft} />
+                        {/* <FontAwesomeIcon icon={faArrowLeft} /> */}
                     </div>
                 </div>
             </div>
