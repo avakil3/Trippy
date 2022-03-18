@@ -29,7 +29,7 @@ app.use("/api/users", users);
 app.use("/api/pins", pins);
 app.use("/api/likes", likes);
 
-const port = process.env.PORT; // || 5001;
+const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 
