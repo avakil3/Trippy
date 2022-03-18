@@ -26,6 +26,5 @@ router.post('/',
       newPin.save().then(pin => res.json(pin));
     }
   );
-
   
   module.exports = router;
