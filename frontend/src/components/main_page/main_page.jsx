@@ -29,6 +29,7 @@ class MainPage extends React.Component {
       .then(() => this.setState({ filteredPins: Object.values(this.props.pins) }));
 
     this.props.fetchLikes(this.props.currentUser);
+    this.props.fetchBoards(this.props.currentUser);
   }
 
 
