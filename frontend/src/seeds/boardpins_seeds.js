@@ -9,12 +9,12 @@ mongoose
 
 const boardPins = [
 
+    new BoardPin({
+       board:"6238e6b0bc964299a414d80b",
+       pin:"623330e3a911874ca354dc2b",
+        }),
     // new BoardPin({
-    //    board:"6238e6a7812ed5f55755debb",
-    //    pin:"622f9b0c3ac02de9dccdacb5",
-    //     }),
-    // new BoardPin({
-    //     board:"6238e6a7812ed5f55755debb",
+    //     board:"6238e6b0bc964299a414d80b",
     //     pin:"622fbcd101e3401a09bf0cf6",
     //         }),
   
