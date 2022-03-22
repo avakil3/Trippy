@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { withRouter } from '../../util/route_util';
-// import { Navigate } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -19,7 +19,6 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            //console.log(this.props)
             this.props.router.navigate("/login")
         }
 
@@ -50,7 +49,6 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user, this.props.navigate);
-        //this.props.login(user, this.props.navigate);
     }
 
     renderErrors() {
@@ -69,12 +67,24 @@ class SignupForm extends React.Component {
         return (
             <div className="session-form-container">
                 <div className="logo-wrapper">
-                    <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                    <Link to="/">
+                        <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                    </Link>
                 </div>
 
                 <h1>Sign Up</h1>
 
                 <button className='demo-btn' onClick={() => this.demoLogin()}>Login as Demo User</button>
+
+                <div className='divider'>
+                    <strong className='divider-title'>OR</strong>
+                </div>
+                
+                <button className='switch-btn'>
+                    <Link to="/login">
+                        Already have an account?
+                    </Link>
+                </button>
 
                 <div className='divider'>
                     <strong className='divider-title'>OR</strong>
