@@ -3,8 +3,25 @@ import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCircle} from "@fortawesome/free-solid-svg-icons";
 import BoardPreview from './board_preview';
+// import { Portal } from 'react-portal';
+import { PortalWithState } from 'react-portal';
+import CreateBoardModalContainer from '../create_board_modal/create_board_modal_container';
 
 export class BoardsIndexPage extends Component {
+
+
+  constructor(props){
+    super(props);
+    // this.state = {modal:false};
+}
+
+    // openModal(){
+    //     this.setState({ modal: true });
+    //   }
+
+    // closeModal(){
+    //   this.setState({ modal: false });
+    // }
 
     componentDidMount(){
         this.props.fetchPins();
@@ -28,7 +45,6 @@ export class BoardsIndexPage extends Component {
     const {boards,boardPins, pins,currentUser} = this.props;
 
     if(Object.values(pins).length === 0 || Object.values(boardPins).length === 0|| !currentUser  ) return null;
-  
     return (
       <div className='body'>
             <div className='gradient likes-page'></div>
@@ -45,9 +61,30 @@ export class BoardsIndexPage extends Component {
               : <p>No boards made yet. [Add button here to create a board]!</p>}
             </div>
         </div>
-        <div className='create-board-btn'>
-              <button id='create-board-btn'>+ Create a New Board</button>
-        </div>
+
+
+        {/* {this.state.modal && (
+          <Portal>
+          <CreateBoardModalContainer />
+          <p className='test' onClick={()=> this.closeModal()}> Close Modal</p>
+          </Portal>
+        )} */}
+
+        <PortalWithState closeOnOutsideClick closeOnEsc>
+          {({ openPortal, closePortal, isOpen, portal }) => (
+            <React.Fragment>
+              <div className='create-board-btn'>
+                    <button id='create-board-btn'onClick={openPortal}>+ Create a New Board</button>
+              </div>
+      
+              {portal(
+                <CreateBoardModalContainer closeModal={closePortal} />
+            // <button onClick={closePortal}>Close me!</button>
+              )}
+            </React.Fragment>
+          )}
+        </PortalWithState>
+
 
       </div>
     )

@@ -15,7 +15,7 @@ router.post('/:user_id',
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
       const newBoard = new Board({
-        name: req.body,
+        name: req.body.name,
         user: req.params.user_id,
       });
   

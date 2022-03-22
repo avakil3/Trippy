@@ -1,0 +1,57 @@
+.create-board-modal-container{
+    position: absolute;
+    transform: translateX(-50%);
+    margin-top: 15%;
+    inset: 0; 
+    left:50%;
+    //   background-color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    width: 40%;
+    height: 35%;
+    border-radius: 18px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    h1{
+        margin-top:40px;
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 700;
+    }   
+    form{
+        width: 80%;
+        button{
+            background-color: var(--trippyOrange);
+            color: white;
+            height: 40px;
+            width: 80px;
+            border-radius: 30px;
+            border: none;
+            text-decoration: none;
+            justify-content: flex-end;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+    }
+    h2{
+        width: 100%;
+        font-weight: 300;
+        font-size: 14px;
+        margin-bottom: 10px;
+    } 
+    h3{
+        color: red;
+    }
+    input{
+        // border: 1px solid black;
+        width: 100%;
+        margin-bottom: 10px;
+        height: 30px;
+    }
+}
+

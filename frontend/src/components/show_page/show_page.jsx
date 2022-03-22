@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import Dropdown from './dropdown';
 import Description from './description';
 import LikeContainer from '../like_item/Like_container';
+import { useNavigate } from 'react-router-dom';
 
 class ShowPage extends React.Component{
     constructor(props){
@@ -54,14 +55,14 @@ class ShowPage extends React.Component{
 
     render(){
         if (!this.props.pins.length) return null; 
-        const pin = this.findPin(this.props.pins, this.props.router.params.pinId)
+        const pin = this.findPin(this.props.pins, this.props.router.params.pinId);
         // debugger
         return(
             <div className='whole-page'>
                 <div className='gradient show'></div>
                 <HeaderContainer/>
                 <div className='everything-but-the-header'>
-                    <Link to={"/home"} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></Link>
+                    <BackButton />
                     <div className='show-container-item-container'>
                         <div className='show-container-item'>
                             <div className='left-side-of-show-container'>
@@ -113,3 +114,13 @@ class ShowPage extends React.Component{
 }
 
 export default ShowPage;
+
+
+
+function BackButton() {
+    const navigate = useNavigate();
+  return (
+    <div onClick={() => navigate(-1)} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></div>
+  )
+}
+
