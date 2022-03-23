@@ -16,6 +16,7 @@ class Pin extends React.Component {
                     <Link to={`/show/${pin._id}`}> 
                         <img key={pin._id} className='pin-img' src={pin.imageURL}/>
                     </Link>
+                    <p className='location'>{`${pin.location}`}</p>
                     <LikeContainer pin={pin} />
                 </div>
             </div>

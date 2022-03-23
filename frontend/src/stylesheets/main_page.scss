@@ -107,7 +107,6 @@
     bottom: 5px;
     right: 5px;
     z-index: 4;
-
 }
 
 .gallery-item:hover .like {
@@ -119,6 +118,23 @@
         opacity: 1;
     }
 }
+
+.gallery-item .location{
+    opacity: 0;
+    color: aliceblue;
+    position: absolute;
+    font-weight: 300;
+    font-size: 14px;
+    bottom: 10px;
+    left: 15px;
+    z-index: 4;
+}
+
+.gallery-item:hover .location {
+    transition: 200ms ease-in;
+    opacity: 1;
+}
+
 
 .like.clicked{
     color: var(--trippyOrange);
@@ -149,20 +165,6 @@
     grid-row: span 3;
 }
 
-
-// .gradient1{
-//     position: absolute;
-//     width: 100%;
-//     top: 0;
-//     background-image: linear-gradient(var(--trippyOrange), white);
-//     border: 1px solid black;
-//     height: 700px;
-//     z-index: -1;
-// }
-
-.body,.whole-page{
-    // background-image: linear-gradient(var(--trippyOrange), white 40%);
-}
 
 .gradient{
     position: absolute;

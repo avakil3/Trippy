@@ -79,16 +79,6 @@ class SignupForm extends React.Component {
                 <div className='divider'>
                     <strong className='divider-title'>OR</strong>
                 </div>
-                
-                <button className='switch-btn'>
-                    <Link to="/login">
-                        Already have an account?
-                    </Link>
-                </button>
-
-                <div className='divider'>
-                    <strong className='divider-title'>OR</strong>
-                </div>
 
                 <form onSubmit={this.handleSubmit} className="form-box">
                     <div className="form-elements">
@@ -134,6 +124,11 @@ class SignupForm extends React.Component {
                         {this.renderErrors()}
                     </div>
                 </form>
+                
+                <p className='switch-btn'>
+                    Have an account? <Link to="/login">Log in.</Link>
+                </p>
+
             </div>
         );
     }

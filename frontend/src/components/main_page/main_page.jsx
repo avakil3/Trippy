@@ -9,16 +9,14 @@ class MainPage extends React.Component {
     super(props)
     this.state = {
       filteredPins: [],
-      anywhere: true, //refers to region filter
-      northAmerica: false,
-      asia: false,
-      europe: false,
-      africa: false,
-      any: true, //refers to tripType filter
-      relaxation: false,
-      adventure: false,
-      camping: false,
-      roadTrip: false
+      northAmerica: true,
+      asia: true,
+      europe: true,
+      africa: true,
+      relaxation: true,
+      adventure: true,
+      camping: true,
+      roadTrip: true
 
     };
     this.handleChange = this.handleChange.bind(this);
@@ -57,28 +55,28 @@ class MainPage extends React.Component {
               <label>Where do you want to travel?</label>
 
               <div className='checkboxes'>
-                <label >
+                {/* <label >
                   <input type="checkbox" defaultChecked="true" name="region" value="anywhere" id='anywhere' onChange={this.handleChange} />
                   Anywhere
-                </label>
+                </label> */}
 
                 <label >
-                  <input type="checkbox" name="region" value="northAmerica" id='northAmerica' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="region" value="northAmerica" id='northAmerica' onChange={this.handleChange} />
                   North America
                 </label>
 
                 <label >
-                  <input type="checkbox" name="region" value="asia" id='asia' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="region" value="asia" id='asia' onChange={this.handleChange} />
                   Asia
                 </label>
 
                 <label >
-                  <input type="checkbox" name="region" value="europe" id='europe' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="region" value="europe" id='europe' onChange={this.handleChange} />
                   Europe
                 </label>
 
                 <label >
-                  <input type="checkbox" name="region" value="africa" id='africa' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="region" value="africa" id='africa' onChange={this.handleChange} />
                   Africa
                 </label>
 
@@ -88,28 +86,28 @@ class MainPage extends React.Component {
               <label>What type of trip?</label>
 
               <div className='checkboxes'>
-                <label >
+                {/* <label >
                   <input type="checkbox" defaultChecked="true" name="tripType" value="any" id='any' onChange={this.handleChange} />
                   Any
-                </label>
+                </label> */}
 
                 <label >
-                  <input type="checkbox" name="tripType" value="relaxation" id='relaxation' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="tripType" value="relaxation" id='relaxation' onChange={this.handleChange} />
                   Relaxation
                 </label>
 
                 <label >
-                  <input type="checkbox" name="tripType" value="adventure" id='adventure' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="tripType" value="adventure" id='adventure' onChange={this.handleChange} />
                   Adventure
                 </label>
 
                 <label >
-                  <input type="checkbox" name="tripType" value="camping" id='camping' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="tripType" value="camping" id='camping' onChange={this.handleChange} />
                   Camping
                 </label>
 
                 <label >
-                  <input type="checkbox" name="tripType" value="roadTrip" id='roadTrip' onChange={this.handleChange} />
+                  <input type="checkbox" defaultChecked="true" name="tripType" value="roadTrip" id='roadTrip' onChange={this.handleChange} />
                   Road Trip
                 </label>
               </div>
