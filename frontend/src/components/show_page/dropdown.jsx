@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToggleSaveButtonContainer from "../toggle_save_button/toggle_save_button_container";
 import CreateBoardModalContainer from '../create_board_modal/create_board_modal_container';
 import { PortalWithState } from 'react-portal';
