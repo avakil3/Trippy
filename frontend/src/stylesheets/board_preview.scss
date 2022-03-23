@@ -71,7 +71,7 @@
   }
 
   .create-board-btn{
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -91,5 +91,53 @@
 
     &:hover{
       background-color: rgb(255, 189, 66);
+    }
+  }
+
+  .board-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .user-header{
+    margin: 0;
+  }
+
+  #placeholder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    img{
+    margin-bottom: 20px;
+    width: 150px;
+    }
+      font-style: italic;
+      font-weight: 300;
+  }
+
+  .edit-board-container{
+    display: flex;
+    .circle{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      cursor: pointer;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+    svg{
+      // margin-top: 5px;
+      // margin-left: 10px;
     }
   }

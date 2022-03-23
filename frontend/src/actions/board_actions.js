@@ -3,6 +3,7 @@ export const RECEIVE_BOARDS = "RECEIVE_BOARDS";
 export const RECEIVE_BOARD = "RECEIVE_BOARD";
 export const RECEIVE_BOARD_PINS = "RECEIVE_BOARD_PINS";
 export const CREATE_BOARD = "CREATE_BOARD";
+export const UPDATE_BOARD = "UPDATE_BOARD";
 export const DELETE_BOARD = "DELETE_BOARD";
 
 export const receiveUserBoards = boards => ({
@@ -24,6 +25,12 @@ export const receiveUserBoards = boards => ({
 
   export const createBoard = board => ({
     type: CREATE_BOARD,
+    board
+  });
+
+
+  export const updateBoard = board => ({
+    type: UPDATE_BOARD,
     board
   });
 
@@ -55,5 +62,11 @@ export const receiveUserBoards = boards => ({
   export const deleteBoard = (board) => dispatch => (
     APIUtil.deleteBoard(board)
       .then(() => dispatch(removeBoard(board)))
+      .catch(err => console.log(err))
+  );
+
+  export const editBoard = (board) => dispatch => (
+    APIUtil.updateBoard(board)
+      .then(() => dispatch(updateBoard(board)))
       .catch(err => console.log(err))
   );

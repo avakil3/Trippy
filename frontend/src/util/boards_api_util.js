@@ -14,6 +14,13 @@ export const createBoard = (board,user) => {
     return axios.post(`/api/boards/${user.id}`, board)
   }
 
+export const updateBoard = (board) => {
+  // debugger
+  return axios.patch(`/api/boards/`, board)
+}
+
+
+
   export const deleteBoard = (board) => {
     // debugger
     return axios.delete(`/api/boards/`, { data: board })

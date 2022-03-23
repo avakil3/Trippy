@@ -1,4 +1,4 @@
-.create-board-modal-container{
+.board-modal-container{
     position: absolute;
     transform: translateX(-50%);
     margin-top: 15%;
@@ -55,3 +55,12 @@
     }
 }
 
+#edit-board-btns{
+    display: flex;
+    justify-content: space-around;
+}
+
+#deleteBoardBtn{
+    background-color: rgb(238, 238, 238);
+    color: black;
+}

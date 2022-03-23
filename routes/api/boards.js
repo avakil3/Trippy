@@ -23,12 +23,28 @@ router.post('/:user_id',
     }
   );
 
+router.patch('/',
+  // passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+
+    Board.findByIdAndUpdate(req.body._id, {name: req.body.name},function(err, result) {
+      if (err) {
+        return res.json({ message: err });
+      } else {
+        return res.json({ message: "Updated" });
+      }
+    });
+  }
+);
+
+
+
   router.delete('/',
     // passport.authenticate('jwt', { session: false }),
     (req, res) => {
-    Like.findByIdAndDelete(req.body)
-    .then(() => res.json("Like deleted."))
-    .catch(err => res.status(400).json("Error: " + err));
+      Board.findByIdAndDelete(req.body)
+        .then(() => res.json("Like deleted."))
+        .catch(err => res.status(400).json("Error: " + err));
     }
   );
 

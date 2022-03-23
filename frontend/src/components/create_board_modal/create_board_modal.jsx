@@ -14,12 +14,13 @@ export class CreateBoardModal extends Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        this.state.name ? 
-          this.setState({error:""}) : 
+        if (this.state.name === '')  {
           this.setState({error:"Board must have a name"});
-     
-        this.props.createNewBoard(this.state, this.props.currentUser)
-            .then( ()=> this.props.closeModal());
+        } else{
+          this.setState({error:""});
+          this.props.createNewBoard(this.state, this.props.currentUser)
+              .then( ()=> this.props.closeModal());
+        }
       }
       
       update(field) {
@@ -28,7 +29,7 @@ export class CreateBoardModal extends Component {
 
     render() {
         return (
-            <div className="create-board-modal-container">
+            <div className="board-modal-container">
               <h1>Create board</h1>
               <form onSubmit={this.handleSubmit}>
                     <h2>Name</h2> 

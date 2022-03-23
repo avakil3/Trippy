@@ -3,7 +3,6 @@ import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCircle} from "@fortawesome/free-solid-svg-icons";
 import BoardPreview from './board_preview';
-// import { Portal } from 'react-portal';
 import { PortalWithState } from 'react-portal';
 import CreateBoardModalContainer from '../create_board_modal/create_board_modal_container';
 
@@ -55,20 +54,15 @@ export class BoardsIndexPage extends Component {
              <h4>My Boards</h4>
             </div>
         <div className='pins-section boards'>
-             <div className="image-grid">
+             <div className="board-grid">
               {boards.length > 0 ? 
               boards.map(board => <BoardPreview board={board} pins={this.FilterBoardPins(board)} key={board._id} /> ) 
-              : <p>No boards made yet. [Add button here to create a board]!</p>}
+              : <div id='placeholder'>
+                <img id='placeholderImage' src="/images/imagePlaceholder.webp" alt="" />
+                No boards exist. Create a board!
+                </div>}
             </div>
         </div>
-
-
-        {/* {this.state.modal && (
-          <Portal>
-          <CreateBoardModalContainer />
-          <p className='test' onClick={()=> this.closeModal()}> Close Modal</p>
-          </Portal>
-        )} */}
 
         <PortalWithState closeOnOutsideClick closeOnEsc>
           {({ openPortal, closePortal, isOpen, portal }) => (
@@ -76,10 +70,8 @@ export class BoardsIndexPage extends Component {
               <div className='create-board-btn'>
                     <button id='create-board-btn'onClick={openPortal}>+ Create a New Board</button>
               </div>
-      
               {portal(
                 <CreateBoardModalContainer closeModal={closePortal} />
-            // <button onClick={closePortal}>Close me!</button>
               )}
             </React.Fragment>
           )}
