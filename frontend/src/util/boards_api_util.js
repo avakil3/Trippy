@@ -12,17 +12,27 @@ export const receiveBoardPins = (board) => {
 export const createBoard = (board,user) => {
     // debugger
     return axios.post(`/api/boards/${user.id}`, board)
-  }
+}
 
 export const updateBoard = (board) => {
   // debugger
   return axios.patch(`/api/boards/`, board)
 }
 
+export const deleteBoard = (board) => {
+  // debugger
+  return axios.delete(`/api/boards/`, { data: board })
+}
 
 
-  export const deleteBoard = (board) => {
-    // debugger
-    return axios.delete(`/api/boards/`, { data: board })
-  }
 
+export const createBoardPin = (boardPin) => {
+  // debugger
+  return axios.post(`/api/boardPins/`, boardPin)
+}
+
+
+export const deleteBoardPin = (boardPin) => {
+  // debugger
+  return axios.delete(`/api/boardPins/`, { data: boardPin })
+}

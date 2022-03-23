@@ -9,19 +9,6 @@ import CreateBoardModalContainer from '../create_board_modal/create_board_modal_
 export class BoardsIndexPage extends Component {
 
 
-  constructor(props){
-    super(props);
-    // this.state = {modal:false};
-}
-
-    // openModal(){
-    //     this.setState({ modal: true });
-    //   }
-
-    // closeModal(){
-    //   this.setState({ modal: false });
-    // }
-
     componentDidMount(){
         this.props.fetchPins();
         this.props.fetchBoards(this.props.currentUser)
@@ -43,7 +30,7 @@ export class BoardsIndexPage extends Component {
   render() {
     const {boards,boardPins, pins,currentUser} = this.props;
 
-    if(Object.values(pins).length === 0 || Object.values(boardPins).length === 0|| !currentUser  ) return null;
+    if(Object.values(pins).length === 0 || !currentUser  ) return null;
     return (
       <div className='body'>
             <div className='gradient likes-page'></div>
