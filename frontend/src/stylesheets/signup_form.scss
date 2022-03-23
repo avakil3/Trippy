@@ -22,7 +22,7 @@
     font-family: sans-serif;
   }
 
-  .demo-btn{
+  .demo-btn {
     background-color: rgb(243,151,102);
     color: white;
     cursor: pointer;
@@ -30,7 +30,6 @@
     padding: 1em;
     padding-left: 2em;
     padding-right: 2em;
-    margin-bottom: 1em;
     font-weight: 700;
     border: none;
     width: 500px;
@@ -49,7 +48,8 @@
     border-top: 1px solid #d9dadc;
     display: block;
     line-height: 1px;
-    margin: 15px 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 500px;
   }
   
@@ -101,14 +101,22 @@
     width: 10em;
     border-radius: 1.8em;
     padding: 1em;
-    padding-left: 2em;
-    padding-right: 2em;
     font-weight: 700;
     border: none;
-    margin: 2em;
   }
-
+  
   .sign-up-errors{
     padding-bottom: 1em;
+    margin-top: 20px;
     color: red;
+  }
+
+  .switch-btn{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    a{
+      color: var(--trippyOrange);
+      text-decoration: underline;
+    }
   }

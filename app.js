@@ -9,6 +9,8 @@ const cors = require('cors');
 const users = require("./routes/api/users");
 const pins = require("./routes/api/pins");
 const likes = require("./routes/api/likes");
+const boards = require("./routes/api/boards");
+const boardPins = require("./routes/api/boardPins");
 const path = require('path');
 
 mongoose
@@ -18,7 +20,7 @@ mongoose
 
 
 app.use(passport.initialize());
-//app.options('*', cors())
+
 app.use(cors());
 require('./config/passport')(passport);
 
@@ -28,6 +30,8 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/pins", pins);
 app.use("/api/likes", likes);
+app.use("/api/boards", boards);
+app.use("/api/boardPins", boardPins);
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from '../../util/route_util';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -64,7 +65,9 @@ class LoginForm extends React.Component {
         return (
             <div className="session-form-container">
                 <div className="logo-wrapper">
-                    <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                    <Link to="/">
+                        <img id="logo" src='images/trippy-logo.jpeg' alt="logo" />
+                    </Link>
                 </div>
 
                 <h1>Log In</h1>
@@ -74,6 +77,7 @@ class LoginForm extends React.Component {
                 <div className='divider'>
                     <strong className='divider-title'>OR</strong>
                 </div>
+            
 
                 <form onSubmit={this.handleSubmit} className="form-box">
                     <div className="form-elements">
@@ -99,6 +103,11 @@ class LoginForm extends React.Component {
                         {this.renderErrors()}
                     </div>
                 </form>
+                
+                <p className='switch-btn'>
+                    Don't have an account? <Link to="/signup">Sign up.</Link>
+                </p>
+
             </div>
         );
     }
