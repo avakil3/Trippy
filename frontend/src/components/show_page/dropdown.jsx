@@ -11,7 +11,7 @@ class Dropdown extends React.Component{
     }
 
     render(){
-        const {boards,pin,boardPins} = this.props;
+        const {boards,pin} = this.props;
         return(
             <div className="show-dropdown">
                 <div className="dropdown-content">

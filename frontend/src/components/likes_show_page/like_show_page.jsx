@@ -31,7 +31,10 @@ export class LikesShowPage extends Component {
              <div className="image-grid">
               {likedPins.length > 0 ? 
               likedPins.map((pin)=> <Pin pin={pin} key={pin._id} /> ) 
-              : <p>No likes. Add some likes!</p>}
+              : <div className='placeholder'>
+              <img src="/images/imagePlaceholder.webp" alt="" />
+              No likes exist. Like some pins!
+              </div>}
             </div>
         </div>
 

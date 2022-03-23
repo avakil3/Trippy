@@ -44,8 +44,8 @@ export class BoardsIndexPage extends Component {
              <div className="board-grid">
               {boards.length > 0 ? 
               boards.map(board => <BoardPreview board={board} pins={this.FilterBoardPins(board)} key={board._id} /> ) 
-              : <div id='placeholder'>
-                <img id='placeholderImage' src="/images/imagePlaceholder.webp" alt="" />
+              : <div className='placeholder'>
+                <img src="/images/imagePlaceholder.webp" alt="" />
                 No boards exist. Create a board!
                 </div>}
             </div>
