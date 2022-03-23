@@ -9,6 +9,8 @@ import SplashPage from './splash_page/splash_page'
 import ShowContainer from './show_page/show_container';
 import MainPageContainer from './main_page/main_page_container';
 import LikesShowPageContainer from './likes_show_page/like_page_container';
+import BoardsIndexPageContainer from './boards_index_page/boards_index_page_container';
+import BoardShowPageContainer from './board_show_page/board_show_page_container';
 import '../index.scss'
 
 const App = () => (
@@ -16,8 +18,10 @@ const App = () => (
     <Routes>
       <Route path="/" element={<SplashPage/>} />
       <Route path='/show/:pinId' element={<ShowContainer/>} />
+      <Route path='/boards/:boardId' element={<BoardShowPageContainer/>} />
       <Route path="/home" element={<MainPageContainer/>} />
       <Route path="/likes" element={<LikesShowPageContainer/>} />
+      <Route path="/boards" element={<BoardsIndexPageContainer/>} />
       <Route path="/signup" element={ <PrivateRoute>
                                         <SignupFormContainer /> 
                                       </PrivateRoute>

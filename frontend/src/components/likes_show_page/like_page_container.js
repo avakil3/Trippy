@@ -3,7 +3,7 @@ import LikesShowPage from './like_show_page';
 import { fetchPins } from '../../actions/pin_actions';
 import { fetchLikes } from '../../actions/like_actions';
 
-const mapStateToProps = ({ session, entities: { users, pins , likes} }) => {
+const mapStateToProps = ({ session, entities: { pins, likes} }) => {
   return {
     currentUser: (session.user ? session.user : null),
     pins,

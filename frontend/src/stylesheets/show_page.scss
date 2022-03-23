@@ -93,9 +93,13 @@
     .header-button-container{
         box-sizing: border-box;
         // border: purple solid 2px;
-        width: fit-content;
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
             > button {
-            background-color: rgb(243,151,102);
+            background-color: var(--trippyOrange);
+            cursor: pointer;
             color: white;
             height: 40px;
             width: 60px;
@@ -117,51 +121,25 @@
         }
     }
 
-    .arrow-container {
-        margin-top: 5%;
-        margin-right: 2%;
-        position: relative;
-        box-sizing: border-box;
-        // border: rgb(214, 111, 214) solid 2px;
-        width: 50%;
-        display: flex;
-        justify-content: flex-end;
-    }
 }
 
 .show-dropdown{
     background-color: white;
-    border-radius: 10%;
+    border-radius: 20px;
     border-color: grey 1px solid;
     box-shadow: 0px 0px 15px 2px lightgrey;
     position: absolute;
-    top: 30%;
+    display: inline-block;
+    overflow:auto;
+    // top: 100%;
+    right: 30%;
     padding: 10px;
-    width: 100%;
+    // min-width: 100%;
+    width: auto;
+    height: fit-content;
     z-index: 10;
-    > ul {
-        // border: green 2px solid;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        li {
-            margin-bottom: 10px;
-            // border: rgb(111, 131, 241) 2px solid;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 5px;
-        }
-
-        li:hover{
-            background-color: lightgray;
-        }
-        #add-board{
-            display: flex;
-        }
-        #add-icon{
-            margin-right: 5%;
-        }
-    } 
+    font-size: 15px;
+    
 }
 
 .heart{
@@ -291,4 +269,52 @@
 
 .gradient.show{
     height: 200px;
+}
+
+.dropdown-content{
+    display: grid;
+}
+
+
+.dropdown-row{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+    > p{
+        min-width: 180px;
+    }
+}
+.dropdown-save-btn{
+    background-color: var(--trippyOrange);
+    cursor: pointer;
+    color: white;
+    height: 30px;
+    // width: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 13px;
+    p{
+        padding: 10px;
+    }
+
+    &:hover{
+        background-color: rgba(200, 70, 0, 0.972);
+        border-radius: 30px;
+
+    }
+
+}
+
+.dropdown-save-btn.unsave{
+    background-color: lightgrey;
+}
+
+#dropdown-create-board-btn{
+    font-weight: 700;
+    cursor: pointer;
 }
