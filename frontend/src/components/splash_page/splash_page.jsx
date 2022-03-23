@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../footer/splash_footer'
 // import trippyLogo from '../../../public/images/trippy-logo.jpeg';
 
 const SplashPage = () => {
@@ -30,7 +31,9 @@ const SplashPage = () => {
                   Sign up for Trippy
               </Link>
             </div>
- 
+            <footer>
+              <Footer/>
+            </footer>
           </div>
       )
 
