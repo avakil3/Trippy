@@ -1,14 +1,41 @@
 
 
 .image-grid p {
-    color: lightgray;
-    font-size: 30px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    opacity: .5;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .pins-section.likes{
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .gradient.likes-page{
-    height: 250px;
+    height: 500px;
 }
+
+.user-header{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    h2{
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
+    h4{
+        padding-bottom: 50px;
+        font-style: italic;
+    }
+}
+
+#header-avatar{
+    font-size: 100px;
+    padding-bottom: 20px;
+}
+

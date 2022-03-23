@@ -3,16 +3,16 @@ import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faAngleDown,faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom"
-import Dropdown from './dropdown';
 import Description from './description';
 import LikeContainer from '../like_item/Like_container';
+import { useNavigate } from 'react-router-dom';
+import DropdownContainer from './dropdown_container';
 
 class ShowPage extends React.Component{
     constructor(props){
         super(props)
         this.state = {clicked: false, liked: false, look: false}
         this.toggleDropdown = this.toggleDropdown.bind(this);
-        // this.hideDropdown = this.hideDropdown.bind(this);
         this.toggleLike = this.toggleLike.bind(this);
         this.toggleDescription = this.toggleDescription.bind(this); 
     }
@@ -25,8 +25,6 @@ class ShowPage extends React.Component{
     toggleLike(){
         this.setState({liked: !this.state.liked})
     }
-
-
 
 
     toggleDescription() {
@@ -44,6 +42,8 @@ class ShowPage extends React.Component{
     componentDidMount(){
         this.props.fetchPins(); 
         this.props.fetchLikes(this.props.currentUser);
+        this.props.fetchBoards(this.props.currentUser)
+            .then(()=> this.props.boards.forEach(board => this.props.fetchBoardPins(board)));
     }
 
     capitalize(str){
@@ -53,15 +53,15 @@ class ShowPage extends React.Component{
     }
 
     render(){
-        if (!this.props.pins.length) return null; 
-        const pin = this.findPin(this.props.pins, this.props.router.params.pinId)
-        // debugger
+        const {pins} = this.props;
+        if (Object.values(pins).length === 0) return null; 
+        const pin = this.findPin(this.props.pins, this.props.router.params.pinId);
         return(
             <div className='whole-page'>
                 <div className='gradient show'></div>
                 <HeaderContainer/>
                 <div className='everything-but-the-header'>
-                    <Link to={"/home"} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></Link>
+                    <BackButton />
                     <div className='show-container-item-container'>
                         <div className='show-container-item'>
                             <div className='left-side-of-show-container'>
@@ -69,12 +69,12 @@ class ShowPage extends React.Component{
                             </div>
                             <div className='right-side-of-show-container'>
                                 <div className='header-of-right-side-of-show'>
-                                    <div className='arrow-container' onClick={this.toggleDropdown} tabIndex="1">
+                                    {/* <div className='arrow-container'  tabIndex="1">
                                         <p><FontAwesomeIcon icon={faAngleDown}/></p>
-                                        {this.state.clicked ? < Dropdown /> : null}
-                                    </div>
+                                    </div> */}
                                     <div className='header-button-container'>
-                                        <button>Save</button>
+                                        {this.state.clicked ? < DropdownContainer pin={pin} /> : null}
+                                        <button onClick={this.toggleDropdown} >Save</button>
                                     </div>
                                 </div>
                                 <div className='show-page-written-content'>
@@ -82,10 +82,7 @@ class ShowPage extends React.Component{
                                         <a href={pin.extLink} target="_blank">{pin.title}</a>
                                     </div>
                                     <div className='region-location'>
-                                        {/* <div className='region-area-of-right-side-of-show'>
-                                            <p className="p-title">Region:</p>
-                                            <p className="p-body">{this.capitalize(pin.region)}</p>
-                                        </div> */}
+                                  
                                         <div className='region-area-of-right-side-of-show'>
                                             <p className="p-title">Location:</p>
                                             <p className="p-body">{pin.location}</p>
@@ -113,3 +110,13 @@ class ShowPage extends React.Component{
 }
 
 export default ShowPage;
+
+
+
+function BackButton() {
+    const navigate = useNavigate();
+  return (
+    <div onClick={() => navigate(-1)} id='left-arrow'><FontAwesomeIcon icon={faArrowLeft} /></div>
+  )
+}
+
