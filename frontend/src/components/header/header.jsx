@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCircle, faAngleDown} from "@fortawesome/free-solid-svg-icons";
 import { withRouter } from '../../util/route_util';
+import { PortalWithState } from 'react-portal';
+import CreateBoardModalContainer from '../create_board_modal/create_board_modal_container';
 
 class Header extends React.Component {
     constructor(props){
@@ -30,25 +32,39 @@ class Header extends React.Component {
             <img id="header-logo" src='images/trippy-logo-white.png' alt="logo" />
           </Link>
         </div>
-        <ul className="splash-nav-bar">
-          {/* <li className="links"><a className="links" href='https://github.com/avakil3/trippy' target="_blank" >GitHub</a></li> */}
-          {/* <li className="hidden">│</li> */}
-          <li>
-            <div className="header-dropdown" onClick={handleClick}>
-            <div className='header-user-info'>
-                <FontAwesomeIcon icon={faUserCircle} id="avatar" />
-                <h4>{this.props.currentUser.username}</h4>
-                <FontAwesomeIcon icon={faAngleDown} id="dropdown" />
-            </div>
-            <ul className={this.state.click ? "dropdown clicked" : "dropdown"}>
-                    <Link to={'/boards'} className="dropdown-option">My Boards</Link>
-                    <Link to={'/likes'} className="dropdown-option">My Likes</Link>
-                    <Link to={'/'} className="dropdown-option" onClick={this.logout}>Log out</Link>
-            </ul>
-            </div>
-        </li>
-        </ul>
-       
+        <div className='header-two-items-on-right'>
+          <PortalWithState closeOnOutsideClick closeOnEsc>
+            {({ openPortal, closePortal, isOpen, portal }) => (
+              <React.Fragment>
+                <div className='about-us-btn'>
+                  <button id='about-us-btn' onClick={openPortal}>About Us</button>
+                </div>
+                {portal(
+                  <CreateBoardModalContainer closeModal={closePortal} />
+                )}
+              </React.Fragment>
+            )}
+          </PortalWithState>
+          
+          <ul className="splash-nav-bar">
+            {/* <li className="links"><a className="links" href='https://github.com/avakil3/trippy' target="_blank" >GitHub</a></li> */}
+            {/* <li className="hidden">│</li> */}
+            <li>
+              <div className="header-dropdown" onClick={handleClick}>
+              <div className='header-user-info'>
+                  <FontAwesomeIcon icon={faUserCircle} id="avatar" />
+                  <h4>{this.props.currentUser.username}</h4>
+                  <FontAwesomeIcon icon={faAngleDown} id="dropdown" />
+              </div>
+              <ul className={this.state.click ? "dropdown clicked" : "dropdown"}>
+                      <Link to={'/boards'} className="dropdown-option">My Boards</Link>
+                      <Link to={'/likes'} className="dropdown-option">My Likes</Link>
+                      <Link to={'/'} className="dropdown-option" onClick={this.logout}>Log out</Link>
+              </ul>
+              </div>
+          </li>
+          </ul>
+        </div>
       </div>
     );
   }
