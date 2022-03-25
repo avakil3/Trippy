@@ -1,0 +1,67 @@
+.about-us-container{
+    position: absolute;
+    transform: translateX(-50%);
+    margin-top: 15%;
+    inset: 0; 
+    left: 50%;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    width: 50%;
+    min-width: 700px;
+    height: 40%;
+    border-radius: 18px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-card{
+    width: 25%;
+    min-width: 175px;
+    height: 80%;
+    border-radius: 18px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.top-of-card{
+    height: 35%;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 18px;
+}
+.mid-of-card{
+    height: 15%;
+    box-sizing: border-box;
+    border: 2px solid rgb(226, 111, 111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > p {
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+.card-logos{
+    height: 15%;
+    box-sizing: border-box;
+    border: 2px solid rgb(1, 161, 62);
+    margin-bottom: 40%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    #company-icon{
+        color:black;
+        font-size: 32px;
+    }
+}

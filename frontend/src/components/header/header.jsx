@@ -1,4 +1,5 @@
 import React from 'react';
+import AboutUs from '../about_us_modal/about_us';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faUserCircle, faAngleDown} from "@fortawesome/free-solid-svg-icons";
@@ -37,10 +38,10 @@ class Header extends React.Component {
             {({ openPortal, closePortal, isOpen, portal }) => (
               <React.Fragment>
                 <div className='about-us-btn'>
-                  <button id='about-us-btn' onClick={openPortal}>About Us</button>
+                  <button id='about-us-btn' onClick={openPortal}><h4>About Us</h4></button>
                 </div>
                 {portal(
-                  <CreateBoardModalContainer closeModal={closePortal} />
+                  <AboutUs closeModal={closePortal} />
                 )}
               </React.Fragment>
             )}
