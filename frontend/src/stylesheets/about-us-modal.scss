@@ -31,19 +31,15 @@
     // border: 3px solid rgb(138, 20, 20);
     display: flex;
     justify-content: center;
-    // margin-top: 1%;
     > p {
         font-family: sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
     }
 }
 
 .about-us-cards{
     box-sizing: border-box;
-    // border: 3px solid rgb(138, 20, 20);
-    // margin-top: 2%;
-    // margin-bottom: 2%;
     height: 80%;
     display: flex;
     align-items: center;
@@ -66,11 +62,17 @@
 }
 
 .top-of-card{
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
     box-sizing: border-box;
     border: 2px solid rgb(28, 175, 9);
     border-radius: 50%;
+    > img{
+        object-fit: cover;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+    }
 }
 .mid-of-card{
     height: 20%;
@@ -81,8 +83,8 @@
     align-items: center;
     > p {
         font-family: sans-serif;
-        font-size: 16px;
-        font-weight: 700;
+        font-size: 15px;
+        font-weight: 600;
     }
 }
 .card-logos{

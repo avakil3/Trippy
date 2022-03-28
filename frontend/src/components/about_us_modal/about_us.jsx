@@ -14,10 +14,36 @@ class AboutUs extends React.Component{
                 <div className="about-us-cards">
                     <div className="about-me-card">
                         <div className="top-of-card">
-                            {/* <img src="" alt="" /> */}
+                                <img src="/images/About_Us_imges/Aagam.jpg"/>
                         </div>
                         <div className="mid-of-card">
                             <p>Aagam Vakil</p>
+                        </div>
+                        <div className="card-logos">
+                            <a href="https://www.linkedin.com/in/aagamvakil/"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://github.com/avakil3"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://app-academy.slack.com/archives/C036R7LLMS6/p1648236685016909"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
+                        </div>
+                    </div>
+                    <div className="about-me-card">
+                        <div className="top-of-card">
+                                <img src="/images/About_Us_imges/shawn.png"/>
+                        </div>
+                        <div className="mid-of-card">
+                            <p>Shawn Fries</p>
+                        </div>
+                        <div className="card-logos">
+                            <a href="https://www.linkedin.com/in/aagamvakil/"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://github.com/avakil3"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://app-academy.slack.com/archives/C036R7LLMS6/p1648236685016909"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
+                        </div>
+                    </div>
+                    <div className="about-me-card">
+                        <div className="top-of-card">
+                                <img src="/images/About_Us_imges/yaakov.jpg"/>
+                        </div>
+                        <div className="mid-of-card">
+                            <p>Yaakov Zaetz</p>
                         </div>
                         <div className="card-logos">
                             <a href="https://www.linkedin.com/in/aagamvakil/"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
