@@ -20,9 +20,9 @@ class AboutUs extends React.Component{
                             <p>Aagam Vakil</p>
                         </div>
                         <div className="card-logos">
-                            <a href="https://www.linkedin.com/in/aagamvakil/"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
-                            <a href="https://github.com/avakil3"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
-                            <a href="https://app-academy.slack.com/archives/C036R7LLMS6/p1648236685016909"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
+                            <a href="https://www.linkedin.com/in/aagamvakil/" target="_blank"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://github.com/avakil3" target="_blank"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://avakil3.github.io/" target="_blank"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
                         </div>
                     </div>
                     <div className="about-me-card">
@@ -33,9 +33,9 @@ class AboutUs extends React.Component{
                             <p>Shawn Fries</p>
                         </div>
                         <div className="card-logos">
-                                <a href="https://www.linkedin.com/in/shawn-fries-628751139/"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
-                            <a href="https://github.com/Shawn-Fries"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
-                            <a href="https://shawn-fries.github.io/"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
+                            <a href="https://www.linkedin.com/in/shawn-fries-628751139/" target="_blank"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://github.com/Shawn-Fries" target="_blank"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://shawn-fries.github.io/" target="_blank"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
                         </div>
                     </div>
                     <div className="about-me-card">
@@ -46,9 +46,9 @@ class AboutUs extends React.Component{
                             <p>Yaakov Zaetz</p>
                         </div>
                         <div className="card-logos">
-                            <a href="https://www.linkedin.com/in/yaakov-zaetz-764191b3/"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
-                            <a href="https://github.com/yakzaetz"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
-                            <a href=""><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
+                            <a href="https://www.linkedin.com/in/yaakov-zaetz-764191b3/" target="_blank"><FontAwesomeIcon icon={faLinkedin} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="https://github.com/yakzaetz" target="_blank"><FontAwesomeIcon icon={faGithub} id='company-icon' /><FontAwesomeIcon /></a>
+                            <a href="" target="_blank"><FontAwesomeIcon icon={faCircleUser} id='company-icon' /><FontAwesomeIcon/></a>
                         </div>
                     </div>
                 </div>

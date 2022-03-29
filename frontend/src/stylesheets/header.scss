@@ -14,7 +14,7 @@
 }
 
 .header-two-items-on-right{
-    // border: 1px solid red;
+    // border: 3px solid red;
     box-sizing: border-box;
     width: 30%;
     display: flex;
@@ -24,7 +24,9 @@
         background: rgba(255, 255, 255, 0.3);
         min-width: 100px;
         cursor: pointer;
-        padding: 10px;
+        // margin-right: 20px;
+        // margin-left: 20px;
+        // padding: 10px;
         border-radius: 30px;
         border: none;
         color: white;
@@ -46,6 +48,7 @@
     // padding: 16px;
     // background-color:var(--trippyOrange);
     height: 100px;
+    // border: solid pink 2px;
 }
 
 .header-logo-container {
@@ -60,6 +63,7 @@
     top: 70px;
     list-style: none;
     text-align: start;
+    // border: 3px solid red;
 }
 
 .dropdown a {

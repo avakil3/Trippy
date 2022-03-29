@@ -1,7 +1,7 @@
 .about-us-modal-container{
     position: absolute;
     transform: translateX(-50%);
-    margin-top: 15%;
+    margin-top: 12%;
     inset: 0; 
     left: 50%;
     z-index: 1;
@@ -11,7 +11,7 @@
     overflow: hidden;
     width: 48%;
     min-width: 700px;
-    height: 40%;
+    height: 45%;
     border-radius: 18px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
@@ -30,7 +30,9 @@
     box-sizing: border-box;
     // border: 3px solid rgb(138, 20, 20);
     display: flex;
+    height: 25px;
     justify-content: center;
+    margin-top: 10px;
     > p {
         font-family: sans-serif;
         font-size: 18px;
@@ -40,10 +42,11 @@
 
 .about-us-cards{
     box-sizing: border-box;
-    height: 80%;
+    height: 75%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 25px;
 }
 
 .about-me-card{
