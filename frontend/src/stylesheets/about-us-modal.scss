@@ -47,6 +47,7 @@
     align-items: center;
     justify-content: space-around;
     margin-bottom: 25px;
+
 }
 
 .about-me-card{
@@ -55,7 +56,7 @@
     height: 100%;
     border-radius: 18px;
     box-sizing: border-box;
-    border: 3px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     padding: 8px;
     display: flex;
@@ -65,9 +66,10 @@
 }
 
 .top-of-card{
-    height: 65px;
-    width: 65px;
+    height: 100px;
+    width: 100px;
     box-sizing: border-box;
+    margin-top: 20px;
     // border: 2px solid rgb(28, 175, 9);
     border-radius: 50%;
     > img{
@@ -94,6 +96,7 @@
 .card-logos{
     height: 20%;
     width: 80%;
+    margin-bottom: 20px;
     box-sizing: border-box;
     // border: 2px solid rgb(1, 161, 62);
     box-sizing: border-box;

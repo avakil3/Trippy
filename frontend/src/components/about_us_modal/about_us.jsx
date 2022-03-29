@@ -9,7 +9,7 @@ class AboutUs extends React.Component{
         <div className="about-us-modal-container">
             <div className="card_container">
                 <div className="au_modal_header">
-                    <p>About Us</p>
+                    <p>Meet the Team</p>
                 </div>
                 <div className="about-us-cards">
                     <div className="about-me-card">
