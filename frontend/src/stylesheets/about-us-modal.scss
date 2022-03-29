@@ -1,0 +1,107 @@
+.about-us-modal-container{
+    position: absolute;
+    transform: translateX(-50%);
+    margin-top: 12%;
+    inset: 0; 
+    left: 50%;
+    z-index: 1;
+    background-color: white;
+    // 
+    // transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    width: 48%;
+    min-width: 700px;
+    height: 45%;
+    border-radius: 18px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card_container{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    // border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.au_modal_header{
+    box-sizing: border-box;
+    // border: 3px solid rgb(138, 20, 20);
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    margin-top: 10px;
+    > p {
+        font-family: sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
+
+.about-us-cards{
+    box-sizing: border-box;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.about-me-card{
+    width: 25%;
+    min-width: 175px;
+    height: 100%;
+    border-radius: 18px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.top-of-card{
+    height: 65px;
+    width: 65px;
+    box-sizing: border-box;
+    // border: 2px solid rgb(28, 175, 9);
+    border-radius: 50%;
+    > img{
+        object-fit: cover;
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+.mid-of-card{
+    height: 20%;
+    box-sizing: border-box;
+    // border: 2px solid rgb(226, 111, 111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > p {
+        font-family: sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+.card-logos{
+    height: 20%;
+    width: 80%;
+    box-sizing: border-box;
+    // border: 2px solid rgb(1, 161, 62);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    #company-icon{
+        color:black;
+        font-size: 24px;
+    }
+}
