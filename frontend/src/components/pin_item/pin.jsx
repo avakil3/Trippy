@@ -4,9 +4,6 @@ import LikeContainer from '../like_item/Like_container';
 
 
 class Pin extends React.Component {
-    constructor(props){
-        super(props)
-    }
 
     render(){
         const {pin} = this.props;
@@ -14,7 +11,7 @@ class Pin extends React.Component {
             <div className={this.props.imgDimensions ? this.props.imgDimensions : "gallery-container h-2"}> 
                 <div className='gallery-item'> 
                     <Link to={`/show/${pin._id}`}> 
-                        <img key={pin._id} className='pin-img' src={pin.imageURL}/>
+                        <img key={pin._id} className='pin-img' src={pin.imageURL} alt={pin.title}/>
                     </Link>
                     <p className='location'>{`${pin.location}`}</p>
                     <LikeContainer pin={pin} />

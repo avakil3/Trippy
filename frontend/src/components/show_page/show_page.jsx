@@ -1,8 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faAngleDown,faHeart } from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom"
+import { faArrowLeft, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import Description from './description';
 import LikeContainer from '../like_item/Like_container';
 import { useNavigate } from 'react-router-dom';
@@ -65,13 +64,11 @@ class ShowPage extends React.Component{
                     <div className='show-container-item-container'>
                         <div className='show-container-item'>
                             <div className='left-side-of-show-container'>
-                                <img src={pin.imageURL} />
+                                <img src={pin.imageURL} alt={pin.title} />
                             </div>
                             <div className='right-side-of-show-container'>
                                 <div className='header-of-right-side-of-show'>
-                                    {/* <div className='arrow-container'  tabIndex="1">
-                                        <p><FontAwesomeIcon icon={faAngleDown}/></p>
-                                    </div> */}
+                                 
                                     <div className='header-button-container'>
                                         {this.state.clicked ? < DropdownContainer pin={pin} /> : null}
                                         <button onClick={this.toggleDropdown} >Save</button>
@@ -93,9 +90,9 @@ class ShowPage extends React.Component{
                                             <p id='description-angle'><FontAwesomeIcon icon={faAngleDown}/></p>
                                         {this.state.look ? < Description description={pin.description}/> : null}
                                     </div>
-                                    {/* <div> */}
+
                                         <div className='heart'> <LikeContainer pin={pin} /> </div>
-                                    {/* </div> */}
+
                                 </div>
                             </div>
                         </div>
