@@ -17,7 +17,7 @@ export class LikesShowPage extends Component {
     if(Object.values(pins).length === 0 || !currentUser  ) return null;
     const likedPinIds = Object.values(likes).map(pin => pin.pin);
     const likedPins = pins.filter(pin => likedPinIds.includes(pin._id))
-    // debugger
+
     return (
       <div className='body'>
             <div className='gradient likes-page'></div>
@@ -28,7 +28,7 @@ export class LikesShowPage extends Component {
              <h4>My Likes</h4>
             </div>
         <div className='pins-section likes'>
-             <div className="image-grid">
+             <div className={likedPins.length > 0 ? 'image-grid' :'board-grid'}>
               {likedPins.length > 0 ? 
               likedPins.map((pin)=> <Pin pin={pin} key={pin._id} /> ) 
               : <div className='placeholder'>

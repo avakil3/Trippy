@@ -45,7 +45,7 @@
 .show-container-item {
     min-height: 40%;
     max-height: 60%;
-    width: 60%;
+    width: 63%;
     min-width: 500px;
     // border: 2px solid rgb(16, 219, 141);
     box-sizing: border-box;
@@ -174,19 +174,25 @@
 .title-area-of-right-side-of-show{
     width: 100%;
     box-sizing: border-box;
-    // border: 2px solid rgb(245, 229, 13);
     display: flex;
-    align-items: center;
     margin-top: 15px;
+    align-items: center;
+    svg{
+    font-size: medium;
+    margin-left: 2px;
+    // margin-top: 20px;
+    }
     > a {
         font-weight: 600;
         font-size: 28px;
         padding-bottom: 10px;
         color: black;  
         width: fit-content;
-        overflow: hidden;
-        // white-space: nowrap;
-        // border: 2px solid rgb(27, 88, 180);  
+        overflow: ellipsis;
+        &:hover{
+            color: var(--trippyOrange);
+            text-decoration: underline;
+        }
     };
 }
 .region-area-of-right-side-of-show{

@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faAngleDown,faLink } from '@fortawesome/free-solid-svg-icons'
 import Description from './description';
 import LikeContainer from '../like_item/Like_container';
 import { useNavigate } from 'react-router-dom';
@@ -76,7 +76,8 @@ class ShowPage extends React.Component{
                                 </div>
                                 <div className='show-page-written-content'>
                                     <div className='title-area-of-right-side-of-show'>
-                                        <a href={pin.extLink} target="_blank">{pin.title}</a>
+                                        <a href={pin.extLink} target="_blank">{pin.title}<FontAwesomeIcon icon={faLink}/></a>
+                                        
                                     </div>
                                     <div className='region-location'>
                                   

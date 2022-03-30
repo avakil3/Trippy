@@ -7,6 +7,7 @@ class Pin extends React.Component {
 
     render(){
         const {pin} = this.props;
+        debugger
         return (
             <div className={this.props.imgDimensions ? this.props.imgDimensions : "gallery-container h-2"}> 
                 <div className='gallery-item'> 

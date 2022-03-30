@@ -74,15 +74,3 @@ export default BoardsIndexPage
 
 
 
-
-{/* <PortalWithState closeOnOutsideClick closeOnEsc>
-          {({ openPortal, closePortal, isOpen, portal }) => (
-            <React.Fragment>
-                    <button id='create-board-btn' onClick={openPortal}>THIS IS THE BUTTON TO OPEN MODAL</button>
-              {portal(
-                // <CreateBoardModalContainer closeModal={closePortal} />
-                //place your modal component
-              )}
-            </React.Fragment>
-          )}
-        </PortalWithState> */}

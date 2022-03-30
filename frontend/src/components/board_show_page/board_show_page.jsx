@@ -58,10 +58,10 @@ export class BoardShowPage extends Component {
               <h4>{filteredPins.length} Pins</h4>
             </div>
         <div className='pins-section boards'>
-            <div className="image-grid">
+            <div className='image-grid'>
                     {filteredPins.length > 0 ? 
                     filteredPins.map(pin => <Pin pin={pin} key={pin._id} />  ) 
-                    : <div id='placeholder'>
+                    : <div className='placeholder'>
                     <img id='placeholderImage' src="/images/imagePlaceholder.webp" alt="" />
                     Board does not contain pins. Add some pins!
                   </div>}
