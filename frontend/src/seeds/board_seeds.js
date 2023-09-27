@@ -9,10 +9,10 @@ mongoose
 
 const boards = [
 
-    // new Board({
-    //    user:"62312ac9097293a1a69840d8",
-    //    name:"Demo Board #2",
-    //     }),
+    new Board({
+       user:"65148a9d206a649b4241eb40",
+       name:"Demo Board #1",
+        }),
   
 
 ];
