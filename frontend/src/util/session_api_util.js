@@ -1,21 +1,20 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const setAuthToken = token => {
+export const setAuthToken = (token) => {
   if (token) {
-    axios.defaults.headers.common['Authorization'] = token;
+    axios.defaults.headers.common["Authorization"] = token;
   } else {
-    delete axios.defaults.headers.common['Authorization'];
+    delete axios.defaults.headers.common["Authorization"];
   }
   // axios.defaults.baseURL = 'http://localhost:5001';
 };
 
 export const signup = (userData) => {
   // axios.defaults.baseURL = 'http://localhost:5001';
-  return axios.post('/api/users/register', userData);
+  return axios.post("/api/users/register", userData);
 };
 
 export const login = (userData) => {
   // axios.defaults.baseURL = 'http://localhost:5001';
-  return axios.post('/api/users/login', userData);
+  return axios.post("/api/users/login", userData);
 };
-
